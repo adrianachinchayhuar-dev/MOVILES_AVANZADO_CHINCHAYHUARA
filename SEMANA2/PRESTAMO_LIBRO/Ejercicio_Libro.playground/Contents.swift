@@ -82,3 +82,70 @@ func leerFechaPresenteOFutura(_ mensaje: String) -> Date {
         print("Formato incorrecto. Use dd/MM/yyyy (Ejemplo: 25/10/2026)")
     }
 }
+
+// Validaciones de Préstamo y Devolución
+
+func leerFechaDevolucion(fechaPrestamo: Date, tipo: TipoUsuario) -> Date {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy"
+    formatter.locale = Locale(identifier: "es_PE")
+
+    let maxDias = diasMaximosPermitidos(tipo)
+    let fechaLimitePermitida = Calendar.current.date(byAdding: .day, value: maxDias, to: fechaPrestamo)!
+
+    while true {
+        print("Fecha programada de devolución (dd/MM/yyyy):", terminator: " ")
+        if let input = readLine()?.trimmingCharacters(in: .whitespaces),
+           let fecha = formatter.date(from: input) {
+
+            if fecha <= fechaPrestamo {
+                print("La fecha de devolución debe ser posterior al préstamo.")
+                continue
+            }
+            
+            if fecha > fechaLimitePermitida {
+                print("Excede el límite de \(maxDias) días permitidos para \(tipo.rawValue). Límite máximo: \(formatter.string(from: fechaLimitePermitida))")
+                continue
+            }
+            return fecha
+        }
+        print("Formato de fecha inválido.")
+    }
+}
+
+func leerFechaEntregaReal(fechaPrestamo: Date) -> Date {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy"
+    formatter.locale = Locale(identifier: "es_PE")
+
+    while true {
+        print("Fecha de entrega real del libro (dd/MM/yyyy):", terminator: " ")
+        if let input = readLine()?.trimmingCharacters(in: .whitespaces),
+           let fecha = formatter.date(from: input) {
+
+            if fecha < fechaPrestamo {
+                print("La entrega real no puede ser anterior a la fecha de préstamo.")
+                continue
+            }
+            return fecha
+        }
+        print("Formato de fecha inválido.")
+    }
+}
+
+func ingresarDatosCompletos() -> Prestamo {
+    print("=== REGISTRO DE PRÉSTAMO - LABORATORIO 01 ===\n")
+    let titulo = leerTextoNoVacio(mensaje: "Título del libro:")
+    let tipo = leerTipoUsuario()
+    let fechaPrestamo = leerFechaPresenteOFutura("\nFecha de préstamo (dd/MM/yyyy):")
+    let fechaDevolucion = leerFechaDevolucion(fechaPrestamo: fechaPrestamo, tipo: tipo)
+    let fechaEntregaReal = leerFechaEntregaReal(fechaPrestamo: fechaPrestamo)
+
+    return Prestamo(
+        tituloLibro: titulo,
+        tipoUsuario: tipo,
+        fechaPrestamo: fechaPrestamo,
+        fechaDevolucionProgramada: fechaDevolucion,
+        fechaEntregaReal: fechaEntregaReal
+    )
+}
