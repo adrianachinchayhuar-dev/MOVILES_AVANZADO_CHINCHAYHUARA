@@ -178,7 +178,7 @@ func tarifaBasePorDia(_ tipo: TipoUsuario) -> Double {
 func recargoMoraPorDia(diaMora: Int, tipo: TipoUsuario) -> Double {
     let base = tarifaBasePorDia(tipo)
     switch diaMora {
-    case 1...3:  return base * 0        // Tarifa normal
+    case 1...3:  return base          // Tarifa normal
     case 4...6:  return base * 1.20    // Recargo del 20%
     case 7...10: return base * 1.50    // Recargo del 50%
     default:     return base * 2.00    // Recargo del 100% (Día 11 en adelante)
@@ -236,7 +236,7 @@ print("Días de Atraso:       \(diasAtraso)")
 print("Situación Usuario:    \(diasAtraso > 20 ? "SUSPENDIDO" : "HABILITADO")")
 
 if diasAtraso > 0 {
-    print("\n--- DESGLOSE DE RECARGOS POR DEMORA ---")
+    print("\n--- DESGLOSE DE RECARGOS POR DELAY ---")
     print("Día\tFecha\t\tMora Día\tAcumulado")
     for fila in tablaMora {
         print("\(fila.dia)\t\(formatter.string(from: fila.fecha))\tS/ \(String(format: "%.2f", fila.cuotaDia))\t\tS/ \(String(format: "%.2f", fila.totalAcumulado))")

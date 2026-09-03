@@ -5,7 +5,6 @@ enum TipoUsuario: String {
     case alumno = "Alumno"
     case docente = "Docente"
     case administrador = "Administrador"
-    case coordinador = "Coordinador"
 }
 
 struct Prestamo {
@@ -22,7 +21,6 @@ func diasMaximosPermitidos(_ tipo: TipoUsuario) -> Int {
     case .alumno: return 7
     case .docente: return 15
     case .administrador: return 10
-    case .coordinador: return 15
     }
 }
 
@@ -43,16 +41,14 @@ func leerTipoUsuario() -> TipoUsuario {
     print("1. Alumno (Máx. 7 días)")
     print("2. Docente (Máx. 15 días)")
     print("3. Administrador (Máx. 10 días)")
-    print("4. Coordinador (Máx. 15 días)")
     
     while true {
-        print("Seleccione (1-4):", terminator: " ")
+        print("Seleccione (1-3):", terminator: " ")
         if let input = readLine()?.trimmingCharacters(in: .whitespaces) {
             switch input {
             case "1": return .alumno
             case "2": return .docente
             case "3": return .administrador
-            case "4": return .coordinador
             default: print("Opción inválida.")
             }
         }
@@ -166,22 +162,16 @@ func tarifaBasePorDia(_ tipo: TipoUsuario) -> Double {
     case .alumno: return 1.50
     case .docente: return 2.00
     case .administrador: return 3.00
-    case .coordinador: return 4.00
     }
 }
 
-// Incremento del cobro cuando el retraso se prolonga según las nuevas reglas:
-// - Día 1 al 3: Tarifa normal
-// - Día 4 al 6: +20%
-// - Día 7 al 10: +50%
-// - Día 11 a más: +100%
+// Incremento del cobro cuando el retraso se prolonga
 func recargoMoraPorDia(diaMora: Int, tipo: TipoUsuario) -> Double {
     let base = tarifaBasePorDia(tipo)
     switch diaMora {
-    case 1...3:  return base * 0        // Tarifa normal
-    case 4...6:  return base * 1.20    // Recargo del 20%
-    case 7...10: return base * 1.50    // Recargo del 50%
-    default:     return base * 2.00    // Recargo del 100% (Día 11 en adelante)
+    case 1...3: return base            // Tarifa estándar
+    case 4...6: return base * 1.5      // Recargo del 50%
+    default:    return base * 2.0      // Recargo del 100% (Aumento por demora excesiva)
     }
 }
 
@@ -233,10 +223,10 @@ print("Fecha Préstamo:       \(formatter.string(from: prestamo.fechaPrestamo))"
 print("Fecha Dev. Programada:\(formatter.string(from: prestamo.fechaDevolucionProgramada))")
 print("Fecha Entrega Real:   \(formatter.string(from: prestamo.fechaEntregaReal))")
 print("Días de Atraso:       \(diasAtraso)")
-print("Situación Usuario:    \(diasAtraso > 20 ? "SUSPENDIDO" : "HABILITADO")")
+print("Situación Usuario:    \(diasAtraso > 10 ? "SUSPENDIDO" : "HABILITADO")")
 
 if diasAtraso > 0 {
-    print("\n--- DESGLOSE DE RECARGOS POR DEMORA ---")
+    print("\n--- DESGLOSE DE RECARGOS POR DELAY ---")
     print("Día\tFecha\t\tMora Día\tAcumulado")
     for fila in tablaMora {
         print("\(fila.dia)\t\(formatter.string(from: fila.fecha))\tS/ \(String(format: "%.2f", fila.cuotaDia))\t\tS/ \(String(format: "%.2f", fila.totalAcumulado))")
@@ -246,3 +236,4 @@ if diasAtraso > 0 {
 } else {
     print("\n Libro entregado a tiempo o antes de la fecha límite. Sin recargos.")
 }
+

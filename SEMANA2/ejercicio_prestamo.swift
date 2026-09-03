@@ -178,7 +178,7 @@ func tarifaBasePorDia(_ tipo: TipoUsuario) -> Double {
 func recargoMoraPorDia(diaMora: Int, tipo: TipoUsuario) -> Double {
     let base = tarifaBasePorDia(tipo)
     switch diaMora {
-    case 1...3:  return base * 0        // Tarifa normal
+    case 1...3:  return base          // Tarifa normal
     case 4...6:  return base * 1.20    // Recargo del 20%
     case 7...10: return base * 1.50    // Recargo del 50%
     default:     return base * 2.00    // Recargo del 100% (Día 11 en adelante)
@@ -246,3 +246,4 @@ if diasAtraso > 0 {
 } else {
     print("\n Libro entregado a tiempo o antes de la fecha límite. Sin recargos.")
 }
+
