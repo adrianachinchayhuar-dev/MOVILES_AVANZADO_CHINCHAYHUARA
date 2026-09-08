@@ -66,3 +66,15 @@ colores.append("Amarillo")
 
 let numeros = [10, 20, 30, 40, 50]
 print(numeros[4]) // FIX 3: El índice 5 está fuera de rango (Out of bounds). Los índices van de 0 a 4; para ver el último elemento usamos [4] o [numeros.count - 1].
+
+
+var lista = [1, 2, 3, 4, 5]
+lista.remove(at: 0) // Quita el 1, queda [2, 3, 4, 5]
+lista.append(6)      // Agrega el 6 al final, queda [2, 3, 4, 5, 6]
+
+print(lista)       // PREDICT 1: [2, 3, 4, 5, 6]
+print(lista.count) // PREDICT 2: 5
+
+var nombres = ["Ana", "Carlos", "Beto"]
+print(nombres.sorted()) // PREDICT 3: ["Ana", "Beto", "Carlos"]
+print(nombres)          // PREDICT 4: ["Ana", "Carlos", "Beto"]
