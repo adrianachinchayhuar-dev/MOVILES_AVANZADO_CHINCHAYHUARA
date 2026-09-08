@@ -138,3 +138,54 @@ print("Mayores de 21: \(mayores)")
 // ANALYZE 1:
 // ¿Qué hace?: Filtra el diccionario llamado 'edades' recorriendo cada persona dentro del diccionario y guarda en el arreglo 'mayores' solo los nombres de quienes tienen 21 años o más.
 // ¿Qué imprime?: En este caso imprime a los que son mayores de 21: ["Luis"]
+
+
+
+// ==========================================
+// EJERCICIO 3: SETS (CONJUNTOS)
+// Desarrollado por: Adriana Chinchayhuara
+// ==========================================
+
+import Foundation
+
+// ===== TODO 8: Eliminar duplicados =====
+var misNumeros: [Int] = []
+for i in 1...8 {
+    print("Número \(i):")
+    let n = Int(readLine() ?? "") ?? 0
+    misNumeros.append(n)
+}
+
+print("Con duplicados: \(misNumeros)")
+let sinDuplicados = Array(Set(misNumeros)).sorted()
+print("Sin duplicados: \(sinDuplicados)")
+
+
+// ===== TODO 9: Comparar asistencia =====
+// Pide 4 nombres lunes, 4 martes
+// Muestra: ambos días, solo lunes, solo martes
+
+var lunes: Set<String> = []
+print("\n===== ASISTENCIA LUNES =====")
+for i in 1...4 {
+    print("Nombre \(i):")
+    let nombre = readLine() ?? ""
+    lunes.insert(nombre)
+}
+
+var martes: Set<String> = []
+print("\n===== ASISTENCIA MARTES =====")
+for i in 1...4 {
+    print("Nombre \(i):")
+    let nombre = readLine() ?? ""
+    martes.insert(nombre)
+}
+
+let ambosDias = lunes.intersection(martes)
+let soloLunes = lunes.subtracting(martes)
+let soloMartes = martes.subtracting(lunes)
+
+print("\n===== RESULTADOS =====")
+print("Ambos días: \(ambosDias)")
+print("Solo lunes: \(soloLunes)")
+print("Solo martes: \(soloMartes)")
