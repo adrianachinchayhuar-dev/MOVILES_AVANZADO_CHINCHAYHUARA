@@ -189,3 +189,17 @@ print("\n===== RESULTADOS =====")
 print("Ambos días: \(ambosDias)")
 print("Solo lunes: \(soloLunes)")
 print("Solo martes: \(soloMartes)")
+
+
+
+// ===== PREDICT (5-6-7-8) =====
+
+let a: Set = [1, 2, 3, 4, 5]
+let b: Set = [4, 5, 6, 7, 8]
+
+print(a.intersection(b))     // PREDICT 5: [4, 5] - Retorna los elementos presentes en ambos conjuntos
+print(a.union(b).count)      // PREDICT 6: 8 - Unifica ambos conjuntos sin repetir elementos (1 al 8) y cuenta el total
+print(a.subtracting(b))     // PREDICT 7: [1, 2, 3] - Toma los elementos de 'a' y remueve los que también están en 'b'
+
+var repetidos: Set = ["A", "B", "A", "C", "B"]
+print(repetidos.count)       // PREDICT 8: 3 - El Set elimina duplicados automáticamente, dejando solo ["A", "B", "C"]
