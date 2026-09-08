@@ -203,3 +203,57 @@ print(a.subtracting(b))     // PREDICT 7: [1, 2, 3] - Toma los elementos de 'a' 
 
 var repetidos: Set = ["A", "B", "A", "C", "B"]
 print(repetidos.count)       // PREDICT 8: 3 - El Set elimina duplicados automáticamente, dejando solo ["A", "B", "C"]
+
+
+// ==========================================
+// EJERCICIO 4: COMBINACIÓN DE COLECCIONES
+// Desarrollado por: Adriana Chinchayhuara
+// ==========================================
+
+import Foundation
+
+// Pide N productos con nombre, precio y stock
+var precios: [String: Double] = [:]
+var stocks: [String: Int] = [:]
+
+print("¿Cuántos productos?")
+let entrada = readLine() ?? ""
+let n = Int(entrada) ?? 3 // Si no ingresas nada, usa 3 por defecto
+
+if n > 0 {
+    for i in 1...n {
+        print("Producto \(i) - Nombre:")
+        let nombre = readLine() ?? "Producto_\(i)"
+        print("Precio:")
+        let precio = Double(readLine() ?? "") ?? 10.0
+        print("Stock:")
+        let stock = Int(readLine() ?? "") ?? 2
+        precios[nombre] = precio
+        stocks[nombre] = stock
+    }
+}
+
+// TODO: Calcular valor total (precio * stock)
+// TODO: Mostrar productos con stock < 5
+
+print("\n===== REPORTE DE INVENTARIO =====")
+var valorTotalInventario: Double = 0.0
+
+for (producto, precio) in precios {
+    if let stock = stocks[producto] {
+        let subtotal = precio * Double(stock)
+        valorTotalInventario += subtotal
+        
+        let advertenciaStock = stock < 5 ? " [ALERTA: Stock bajo]" : ""
+        print("\(producto): Precio: S/ \(precio) | Stock: \(stock) | Subtotal: S/ \(subtotal)\(advertenciaStock)")
+    }
+}
+
+print("\nValor total del inventario: S/ \(valorTotalInventario)")
+
+print("\n===== PRODUCTOS CON STOCK BAJO (< 5) =====")
+for (producto, stock) in stocks {
+    if stock < 5 {
+        print("- \(producto): \(stock) unidades")
+    }
+}
