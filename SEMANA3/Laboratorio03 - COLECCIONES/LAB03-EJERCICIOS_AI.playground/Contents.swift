@@ -76,3 +76,12 @@ print("Promedio General del grupo: \(promedioGeneral)") // Imprime el promedio g
 print("Nota más alta registrada: \(notaMasAlta)") // Imprime la nota más alta
 print("Nota más baja registrada: \(notaMasBaja)") // Imprime la nota más baja
 print("Porcentaje de aprobados: \(porcentajeAprobados)%") // Imprime el porcentaje final
+
+
+// TODO 11: Ordenar por promedio de mayor a menor
+let alumnosOrdenados = promediosPorAlumno.sorted { $0.value > $1.value } // Ordena la colección por el valor del promedio en orden descendente
+
+print("\n--- ALUMNOS ORDENADOS POR PROMEDIO ---") // Encabezado de sección
+for (posicion, item) in alumnosOrdenados.enumerated() { // Itera obteniendo el índice y el par (alumno, promedio)
+    print("\(posicion + 1). \(item.key): \(item.value)") // Muestra la posición, nombre y promedio ordenado
+}
