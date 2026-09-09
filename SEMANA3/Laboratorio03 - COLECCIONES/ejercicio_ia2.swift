@@ -76,3 +76,4 @@ print("Promedio General del grupo: \(promedioGeneral)") // Imprime el promedio g
 print("Nota más alta registrada: \(notaMasAlta)") // Imprime la nota más alta
 print("Nota más baja registrada: \(notaMasBaja)") // Imprime la nota más baja
 print("Porcentaje de aprobados: \(porcentajeAprobados)%") // Imprime el porcentaje final
+
