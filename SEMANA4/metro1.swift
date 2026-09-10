@@ -175,6 +175,7 @@ func listarLineas() {
 }
  
 // MARK: - Menú en consola
+// COMMIT 3: menú mínimo, solo con lo que ya está implementado (RF-1).
  
 func mostrarMenu() {
     print("""
@@ -186,7 +187,7 @@ func mostrarMenu() {
     6. Salir
     ============================================
     Elige una opción:
-""")
+    """)
 }
  
 var continuarEjecucion = true
@@ -205,3 +206,4 @@ while continuarEjecucion {
         print("Opción no válida.")
     }
 }
+
