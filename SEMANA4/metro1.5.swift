@@ -65,7 +65,6 @@ let redDelMetro: [LineaMetro: [Estacion]] = [
         Estacion(nombre: "La Cultura", distrito: "San Borja", puntosDeInteres: ["Museo de la Nación"]),
         Estacion(nombre: "Arriola", distrito: "La Victoria", puntosDeInteres: []),
         Estacion(nombre: "Gamarra", distrito: "La Victoria", puntosDeInteres: ["Emporio Comercial de Gamarra"]),
-        Estacion(nombre: "28 de Julio", distrito: "La Victoria", puntosDeInteres: []),
         Estacion(nombre: "Miguel Grau", distrito: "La Victoria", puntosDeInteres: []),
         Estacion(nombre: "El Ángel", distrito: "El Agustino", puntosDeInteres: []),
         Estacion(nombre: "Presbítero Maestro", distrito: "Cercado de Lima", puntosDeInteres: ["Cementerio Presbítero Maestro"]),
@@ -134,27 +133,18 @@ let redDelMetro: [LineaMetro: [Estacion]] = [
         Estacion(nombre: "República de Panamá", distrito: "Miraflores", puntosDeInteres: []),
         Estacion(nombre: "Juana Alarco", distrito: "Miraflores", puntosDeInteres: []),
         Estacion(nombre: "Alejandro Velasco", distrito: "Miraflores", puntosDeInteres: []),
-        Estacion(nombre: "Cabitos", distrito: "Surco", puntosDeInteres: []),
         Estacion(nombre: "Las Gardenias", distrito: "Surco", puntosDeInteres: []),
         Estacion(nombre: "Los Héroes", distrito: "Surco", puntosDeInteres: []),
         Estacion(nombre: "Pedro Miotta", distrito: "Surco", puntosDeInteres: []),
     ],
  
-    // Línea 4: las primeras 8 son el Ramal Faucett-Gambetta, en construcción real (avance 53% a ene-2026).
-    // Las 3 últimas son puntos de cruce confirmados por ATU/MTC con el resto de la red (jun-jul 2026);
-    // el trazado completo hacia el este (28 estaciones anunciadas) aún no tiene nombres oficiales publicados.
     .l4: [
-        Estacion(nombre: "Gambetta", distrito: "Callao", puntosDeInteres: []),
-        Estacion(nombre: "Canta Callao", distrito: "Callao", puntosDeInteres: []),
-        Estacion(nombre: "Bocanegra", distrito: "Callao", puntosDeInteres: []),
-        Estacion(nombre: "Aeropuerto", distrito: "Callao", puntosDeInteres: ["Aeropuerto Internacional Jorge Chávez"]),
-        Estacion(nombre: "El Olivar", distrito: "Callao", puntosDeInteres: []),
-        Estacion(nombre: "Quilca", distrito: "Callao", puntosDeInteres: []),
-        Estacion(nombre: "Morales Duárez", distrito: "Callao", puntosDeInteres: []),
-        Estacion(nombre: "Carmen de La Legua", distrito: "Carmen de la Legua", puntosDeInteres: []),
-        Estacion(nombre: "Conde de San Isidro", distrito: "San Isidro", puntosDeInteres: []),
-        Estacion(nombre: "La Cultura", distrito: "San Borja", puntosDeInteres: ["Museo de la Nación"]),
-        Estacion(nombre: "Mercado Santa Anita", distrito: "Santa Anita", puntosDeInteres: ["Mercado Mayorista de Santa Anita"]),
+        Estacion(nombre: "Municipalidad de Ate (L4)", distrito: "Ate", puntosDeInteres: []),
+        Estacion(nombre: "Santa Anita (L4)", distrito: "Santa Anita", puntosDeInteres: []),
+        Estacion(nombre: "San Luis (L4)", distrito: "San Luis", puntosDeInteres: []),
+        Estacion(nombre: "La Victoria (L4)", distrito: "La Victoria", puntosDeInteres: []),
+        Estacion(nombre: "Breña (L4)", distrito: "Breña", puntosDeInteres: []),
+        Estacion(nombre: "Callao (L4)", distrito: "Callao", puntosDeInteres: []),
     ],
  
     .l5: [
@@ -172,7 +162,6 @@ let redDelMetro: [LineaMetro: [Estacion]] = [
         Estacion(nombre: "Surco (L6)", distrito: "Surco", puntosDeInteres: []),
     ],
 ]
- 
 
 // MARK: - Funciones de consulta
  
@@ -303,3 +292,4 @@ while continuarEjecucion {
         print("Opción no válida.")
     }
 }
+
