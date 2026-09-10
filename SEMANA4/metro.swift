@@ -42,3 +42,4 @@ struct Estacion {
     let distrito: String
     let puntosDeInteres: [String]
 }
+
