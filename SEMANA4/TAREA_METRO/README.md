@@ -18,7 +18,7 @@ después desde la opción **9**.
 
 ## Funcionalidades
 
-0. Configuración inicial (al arrancar el programa)
+### 0. Configuración inicial (al arrancar el programa)
 Antes de mostrar el menú, el programa pide el nombre del usuario y su tipo 
 de pasajero (adulto, escolar, universitario o adulto mayor). Estos datos 
 alimentan el resto del simulador: el nombre aparece en la cabecera del menú 
