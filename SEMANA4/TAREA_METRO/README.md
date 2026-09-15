@@ -18,6 +18,14 @@ después desde la opción **9**.
 
 ## Funcionalidades
 
+0. Configuración inicial (al arrancar el programa)
+Antes de mostrar el menú, el programa pide el nombre del usuario y su tipo 
+de pasajero (adulto, escolar, universitario o adulto mayor). Estos datos 
+alimentan el resto del simulador: el nombre aparece en la cabecera del menú 
+y en el plan de viaje, y el tipo de pasajero determina qué tarifa se cobra 
+en la opción 5. Ambos se pueden cambiar después desde la opción 9 sin perder 
+el historial de viajes ya registrado.
+
 ### 1. Ver líneas y estado del servicio
 Lista las 6 líneas con color, recorrido, cantidad de estaciones (o aviso de
 "sin lista publicada" si no las tiene), y el sistema de pago que usan.
