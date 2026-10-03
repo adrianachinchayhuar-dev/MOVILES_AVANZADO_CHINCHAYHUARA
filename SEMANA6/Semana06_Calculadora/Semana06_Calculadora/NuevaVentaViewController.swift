@@ -9,6 +9,16 @@ import UIKit
 
 class NuevaVentaViewController: UIViewController {
 
+    @IBOutlet weak var tfElectrodomestico: UITextField!
+    
+    @IBOutlet weak var tfPrecioUnitario: UITextField!
+    
+    @IBOutlet weak var tfCantidad: UITextField!
+    
+    @IBOutlet weak var tfMeses: UITextField!
+    
+    @IBOutlet weak var tfInteres: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

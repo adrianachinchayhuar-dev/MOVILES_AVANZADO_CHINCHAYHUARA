@@ -107,6 +107,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lf8-Rb-ZzN"/>
+                    <connections>
+                        <outlet property="tfCantidad" destination="GBH-q9-e2Q" id="VoM-BW-uEY"/>
+                        <outlet property="tfElectrodomestico" destination="Kdt-uG-ImJ" id="y8z-b5-ef9"/>
+                        <outlet property="tfInteres" destination="g15-EK-WwQ" id="6CJ-Tb-xfz"/>
+                        <outlet property="tfMeses" destination="hxj-J0-WTw" id="2rf-DF-TFB"/>
+                        <outlet property="tfPrecioUnitario" destination="1bf-H1-3bz" id="K4i-LD-riQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
