@@ -250,6 +250,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q4N-wl-GaG"/>
+                    <connections>
+                        <outlet property="lblBase" destination="jeY-yr-7Xl" id="KL7-EC-d6Q"/>
+                        <outlet property="lblCuota" destination="vCL-mn-jfZ" id="kjt-ZM-Neg"/>
+                        <outlet property="lblIgv" destination="Qu8-QJ-nxI" id="eU0-0a-PfI"/>
+                        <outlet property="lblIntereses" destination="9xb-6l-DhS" id="Z3X-uB-orn"/>
+                        <outlet property="lblSubtotal" destination="Q4N-wl-GaG" id="cFC-mq-mzQ"/>
+                        <outlet property="lblTotal" destination="LZ2-Ig-Bma" id="FLm-JI-2oo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5T-mB-MvZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
