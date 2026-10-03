@@ -6,13 +6,8 @@
 	objectVersion = 110;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		3AA88B703070C91400DD1161 /* VentaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA88B6F3070C91400DD1161 /* VentaModel.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		3A30F2CE3070C28F0066A98D /* Semana06_Calculadora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semana06_Calculadora.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AA88B6F3070C91400DD1161 /* VentaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VentaModel.swift; path = Semana06_Calculadora/VentaModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -48,7 +43,6 @@
 		3A30F2C53070C28F0066A98D = {
 			isa = PBXGroup;
 			children = (
-				3AA88B6F3070C91400DD1161 /* VentaModel.swift */,
 				3A30F2D03070C28F0066A98D /* Semana06_Calculadora */,
 				3A30F2CF3070C28F0066A98D /* Products */,
 			);
@@ -129,7 +123,6 @@
 		3A30F2CA3070C28F0066A98D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
-				3AA88B703070C91400DD1161 /* VentaModel.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
