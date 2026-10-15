@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Xcode - preferencias personales
+xcuserdata/
+
+# Archivos temporales y compilaciones
+DerivedData/
+build/
+*.xcuserstate
