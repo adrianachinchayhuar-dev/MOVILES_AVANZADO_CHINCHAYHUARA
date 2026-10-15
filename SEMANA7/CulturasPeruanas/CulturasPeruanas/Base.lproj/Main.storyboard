@@ -55,7 +55,7 @@
         <!--Detalle View Controller-->
         <scene sceneID="ngc-y2-Fts">
             <objects>
-                <viewController id="Lcm-mT-vnQ" customClass="DetalleViewController" customModule="CulturasPeruanas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetalleViewController" id="Lcm-mT-vnQ" customClass="DetalleViewController" customModule="CulturasPeruanas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="52Y-UA-4N8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,10 +130,25 @@
                     <view key="view" contentMode="scaleToFill" id="fav-view-001">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="116" translatesAutoresizingMaskIntoConstraints="NO" id="fav-table-001">
+                                <rect key="frame" x="0.0" y="100" width="393" height="650"/>
+                                <color key="backgroundColor" red="0.96" green="0.93" blue="0.87" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fav-safe-001"/>
+                        <constraints>
+                            <constraint firstItem="fav-table-001" firstAttribute="top" secondItem="fav-safe-001" secondAttribute="top" id="fav-top-001"/>
+                            <constraint firstItem="fav-table-001" firstAttribute="bottom" secondItem="fav-safe-001" secondAttribute="bottom" id="fav-bottom-001"/>
+                            <constraint firstItem="fav-table-001" firstAttribute="leading" secondItem="fav-safe-001" secondAttribute="leading" id="fav-leading-001"/>
+                            <constraint firstItem="fav-table-001" firstAttribute="trailing" secondItem="fav-safe-001" secondAttribute="trailing" id="fav-trailing-001"/>
+                        </constraints>
                         <color key="backgroundColor" red="0.96" green="0.93" blue="0.87" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Favoritos" id="fav-item-001"/>
+                    <navigationItem key="navigationItem" title="Mis favoritas" id="fav-item-001"/>
+                    <connections>
+                        <outlet property="tablaFavoritas" destination="fav-table-001" id="fav-table-outlet"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fav-vc-res" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,8 +7,22 @@ class CulturaTableViewCell: UITableViewCell {
     private let nombre = EstiloUI.etiqueta("", estilo: .title2, serif: true)
     private let region = EstiloUI.etiqueta("", estilo: .subheadline, color: EstiloUI.secundario)
 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configurarTarjeta()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        configurarTarjeta()
+    }
+
+    private func configurarTarjeta() {
+        selectionStyle = .none
         backgroundColor = .clear
         contentView.backgroundColor = .clear
         tarjeta.backgroundColor = EstiloUI.marfil

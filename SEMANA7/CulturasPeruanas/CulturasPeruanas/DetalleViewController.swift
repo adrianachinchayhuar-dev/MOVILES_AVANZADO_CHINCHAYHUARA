@@ -2,11 +2,40 @@ import UIKit
 
 class DetalleViewController: UIViewController {
     var culturaSeleccionada: Cultura?
+    private let favoritos = FavoritosStore.compartido
+    private lazy var botonFavorito = UIBarButtonItem(
+        image: UIImage(systemName: "heart"), style: .plain,
+        target: self, action: #selector(alternarFavorito))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = culturaSeleccionada?.nombre
         configurarInterfaz()
+        navigationItem.rightBarButtonItem = botonFavorito
+        actualizarFavorito()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        actualizarFavorito()
+    }
+
+    @objc private func alternarFavorito() {
+        guard let cultura = culturaSeleccionada else { return }
+        favoritos.alternar(cultura.id)
+        actualizarFavorito()
+    }
+
+    private func actualizarFavorito() {
+        guard let cultura = culturaSeleccionada else {
+            botonFavorito.isEnabled = false
+            return
+        }
+        let guardada = favoritos.contiene(cultura.id)
+        botonFavorito.image = UIImage(systemName: guardada ? "heart.fill" : "heart")
+        botonFavorito.tintColor = guardada ? EstiloUI.terracota : EstiloUI.secundario
+        botonFavorito.accessibilityLabel = guardada ? "Quitar de favoritas" : "Agregar a favoritas"
+        botonFavorito.accessibilityValue = guardada ? "Guardada" : "Sin guardar"
     }
 
     func configurarInterfaz() {

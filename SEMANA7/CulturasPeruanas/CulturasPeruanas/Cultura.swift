@@ -8,6 +8,7 @@
 import Foundation
 
 struct Cultura {
+    let id: String
     let nombre: String
     let region: String
     let descripcion: String

@@ -11,44 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tablaCulturas: UITableView!
     
-    let culturas: [Cultura] = [
-        Cultura(
-            nombre: "Caral",
-            region: "Lima",
-            descripcion: "Una de las civilizaciones más antiguas de América, reconocida por sus construcciones monumentales.",
-            imagen: "caral"
-        ),
-        Cultura(
-            nombre: "Chavín",
-            region: "Áncash",
-            descripcion: "Cultura destacada por su arquitectura religiosa y esculturas como el Lanzón Monolítico.",
-            imagen: "chavin"
-        ),
-        Cultura(
-            nombre: "Paracas",
-            region: "Ica",
-            descripcion: "Cultura reconocida por sus textiles, mantos funerarios y conocimientos médicos.",
-            imagen: "paracas"
-        ),
-        Cultura(
-            nombre: "Nazca",
-            region: "Ica",
-            descripcion: "Cultura conocida por las Líneas de Nazca, su cerámica y sus sistemas hidráulicos.",
-            imagen: "nazca"
-        ),
-        Cultura(
-            nombre: "Moche",
-            region: "La Libertad",
-            descripcion: "Cultura de la costa norte del Perú, destacada por su cerámica y sus construcciones ceremoniales.",
-            imagen: "moche"
-        ),
-        Cultura(
-            nombre: "Inca",
-            region: "Cusco",
-            descripcion: "Civilización andina que desarrolló el Tahuantinsuyo, con grandes avances en arquitectura e ingeniería.",
-            imagen: "inca"
-        )
-    ]
+    let culturas = CatalogoCulturas.todas
 
     private let buscador = UISearchController(searchResultsController: nil)
     private var culturasVisibles: [Cultura] = []
