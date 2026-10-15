@@ -13,4 +13,5 @@ struct Cultura {
     let region: String
     let descripcion: String
     let imagen: String
+    let periodoHistorico: PeriodoHistorico
 }

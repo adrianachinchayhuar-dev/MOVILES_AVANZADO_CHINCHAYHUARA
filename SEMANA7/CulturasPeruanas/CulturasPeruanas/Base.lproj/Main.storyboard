@@ -171,10 +171,25 @@
                     <view key="view" contentMode="scaleToFill" id="time-view-001">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="480" translatesAutoresizingMaskIntoConstraints="NO" id="time-table-001">
+                                <rect key="frame" x="0.0" y="100" width="393" height="650"/>
+                                <color key="backgroundColor" red="0.96" green="0.93" blue="0.87" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="time-safe-001"/>
+                        <constraints>
+                            <constraint firstItem="time-table-001" firstAttribute="top" secondItem="time-safe-001" secondAttribute="top" id="time-top-001"/>
+                            <constraint firstItem="time-table-001" firstAttribute="bottom" secondItem="time-safe-001" secondAttribute="bottom" id="time-bottom-001"/>
+                            <constraint firstItem="time-table-001" firstAttribute="leading" secondItem="time-safe-001" secondAttribute="leading" id="time-leading-001"/>
+                            <constraint firstItem="time-table-001" firstAttribute="trailing" secondItem="time-safe-001" secondAttribute="trailing" id="time-trailing-001"/>
+                        </constraints>
                         <color key="backgroundColor" red="0.96" green="0.93" blue="0.87" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Línea de tiempo" id="time-item-001"/>
+                    <connections>
+                        <outlet property="tablaLineaTiempo" destination="time-table-001" id="time-table-outlet"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="time-vc-res" sceneMemberID="firstResponder"/>
             </objects>
