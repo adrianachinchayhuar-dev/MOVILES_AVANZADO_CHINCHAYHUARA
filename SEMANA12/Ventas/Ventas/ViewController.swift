@@ -41,14 +41,28 @@ class ViewController: UIViewController {
 
         do {
             if let usuario = try contexto.fetch(solicitud).first {
-                mostrarAlerta("Bienvenido, \(usuario.nombre ?? "")")
-                // Después abriremos las pestañas según el rol.
+                view.endEditing(true)
+                performSegue(withIdentifier: "loginAProductos", sender: usuario)
             } else {
                 mostrarAlerta("Usuario o clave incorrectos")
             }
         } catch {
             mostrarAlerta("Error al consultar los usuarios")
         }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "loginAProductos",
+              let usuario = sender as? Usuario else { return }
+
+        let destino: ProductosViewController?
+        if let navegacion = segue.destination as? UINavigationController {
+            destino = navegacion.viewControllers.first as? ProductosViewController
+        } else {
+            destino = segue.destination as? ProductosViewController
+        }
+        destino?.usuarioSesion = usuario
     }
 
     func mostrarAlerta(_ mensaje: String) {
