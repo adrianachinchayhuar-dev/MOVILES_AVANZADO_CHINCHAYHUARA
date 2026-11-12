@@ -322,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="285"/>
+            <point key="canvasLocation" x="2666" y="106"/>
         </scene>
         <!--Registrar Venta View Controller-->
         <scene sceneID="a5-scene">
@@ -453,7 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068" y="956"/>
+            <point key="canvasLocation" x="1914" y="1001"/>
         </scene>
         <!--Mis Ventas View Controller-->
         <scene sceneID="a6-scene">
@@ -521,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2975" y="956"/>
+            <point key="canvasLocation" x="2947" y="1001"/>
         </scene>
         <!--Menu Principal View Controller-->
         <scene sceneID="menu-scene">
