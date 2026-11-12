@@ -22,6 +22,10 @@ class ViewController: UIViewController,
 
         mostrarRutaBaseDeDatos()
         cargarInfoCoreData()
+        
+        // contactos = buscarContactos(texto: "naomi")
+        // TablaContacto.reloadData()
+        probarRelacion()
     }
 
     // MARK: - Conexión con Core Data
