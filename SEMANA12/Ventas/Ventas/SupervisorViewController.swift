@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-// Resumen conserva su implementación mínima. Ventas del equipo incluye A7 y anulación A8.
+// Resumen A9 y Ventas del equipo A7/A8 comparten el controlador existente.
 final class SupervisorViewController: UITableViewController, UISearchBarDelegate {
     var usuarioSesion: Usuario? {
         didSet {
@@ -17,7 +17,7 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
     var mostrarResumen = false
     private var contexto: NSManagedObjectContext!
     private var ventas: [Venta] = []
-    private var resumen: [(String, Int)] = []
+    private var resumen: [(String, String)] = []
     private var anulando = false
     private var vendedorID: NSManagedObjectID?
     private let buscarSearchBar = UISearchBar()
@@ -46,6 +46,7 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         tableView.estimatedRowHeight = 125
         tableView.keyboardDismissMode = .onDrag
         if !mostrarResumen { configurarFiltros() }
+        configurarActualizacion()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +78,9 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         ])
         filtrosStack = stack
         tableView.tableHeaderView = cabecera
+    }
+
+    private func configurarActualizacion() {
         let refrescar = UIRefreshControl()
         refrescar.addTarget(self, action: #selector(actualizarListado), for: .valueChanged)
         refreshControl = refrescar
@@ -146,10 +150,15 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         }
         do {
             if mostrarResumen {
-                for entidad in ["Producto", "Cliente", "Venta"] {
-                    let solicitud = NSFetchRequest<NSFetchRequestResult>(entityName: entidad)
-                    resumen.append((entidad == "Producto" ? "Productos" : (entidad == "Cliente" ? "Clientes" : "Ventas registradas"), try contexto.count(for: solicitud)))
-                }
+                let indicadores = try IndicadoresResumen.consultar(en: contexto)
+                resumen = [
+                    ("Productos registrados", String(indicadores.productos)),
+                    ("Clientes registrados", String(indicadores.clientes)),
+                    ("Ventas registradas", String(indicadores.ventasRegistradas)),
+                    ("Ventas efectivas", String(indicadores.ventasEfectivas)),
+                    ("Ventas anuladas", String(indicadores.ventasAnuladas)),
+                    ("Ingresos efectivos", indicadores.ingresosFormateados)
+                ]
             } else {
                 try actualizarVendedores()
                 let solicitud: NSFetchRequest<Venta> = Venta.fetchRequest()
@@ -205,8 +214,8 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         celda.textLabel?.numberOfLines = 0
         celda.detailTextLabel?.numberOfLines = 0
         if mostrarResumen {
-            celda.textLabel?.text = "\(resumen[indexPath.row].0): \(resumen[indexPath.row].1)"
-            celda.detailTextLabel?.text = nil
+            celda.textLabel?.text = resumen[indexPath.row].0
+            celda.detailTextLabel?.text = resumen[indexPath.row].1
         } else {
             let venta = ventas[indexPath.row]
             celda.textLabel?.text = "\(fechaVenta(venta)) · \(venta.anulada ? "Anulada" : "Activa")"
