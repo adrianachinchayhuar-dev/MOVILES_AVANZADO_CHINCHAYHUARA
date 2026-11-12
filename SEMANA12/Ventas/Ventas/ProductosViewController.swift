@@ -14,7 +14,7 @@ final class ProductosViewController: UIViewController, UITableViewDataSource,
 
     var usuarioSesion: Usuario? {
         didSet {
-            if isViewLoaded { actualizarPermisos() }
+            if isViewLoaded { actualizarPermisos(); cargarProductos() }
         }
     }
 
@@ -111,6 +111,13 @@ final class ProductosViewController: UIViewController, UITableViewDataSource,
 
     private func cargarProductos() {
         guard let contexto = contexto else { return }
+        guard let usuario = usuarioSesion, !usuario.isDeleted,
+              usuario.managedObjectContext != nil,
+              ["Vendedor", "Supervisor"].contains(usuario.rol ?? "") else {
+            productos = []
+            productosTableView.reloadData()
+            return
+        }
         let solicitud: NSFetchRequest<Producto> = Producto.fetchRequest()
         let texto = (buscarSearchBar.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
         if !texto.isEmpty {

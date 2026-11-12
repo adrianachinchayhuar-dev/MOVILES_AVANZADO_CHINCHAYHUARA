@@ -17,6 +17,8 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var confirmarTextField: UITextField!
     @IBOutlet weak var rolSegmented: UISegmentedControl!
 
+    private var registrando = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +27,12 @@ class RegistroViewController: UIViewController {
     }
 
     @IBAction func registrarme(_ sender: UIButton) {
+        guard !registrando else { return }
 
+        guard [0, 1].contains(rolSegmented.selectedSegmentIndex) else {
+            mostrarAlerta("Selecciona un rol para la cuenta.")
+            return
+        }
         let nombre = nombreTextField.text?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
 
@@ -64,6 +71,7 @@ class RegistroViewController: UIViewController {
                 return
             }
 
+            registrando = true
             let nuevoUsuario = Usuario(context: contexto)
             nuevoUsuario.nombre = nombre
             nuevoUsuario.usuario = usuario
@@ -83,13 +91,21 @@ class RegistroViewController: UIViewController {
                 title: "Aceptar",
                 style: .default,
                 handler: { _ in
-                    self.navigationController?.popViewController(animated: true)
+                    guard let destino = self.storyboard?.instantiateViewController(withIdentifier: "MenuPrincipalViewController") as? MenuPrincipalViewController else {
+                        self.registrando = false
+                        self.navigationController?.popToRootViewController(animated: true)
+                        return
+                    }
+                    destino.usuarioSesion = nuevoUsuario
+                    destino.modalPresentationStyle = .fullScreen
+                    self.present(destino, animated: true)
                 }
             ))
 
             present(alerta, animated: true)
 
         } catch {
+            registrando = false
             contexto.rollback()
             mostrarAlerta("Error al registrar usuario")
         }

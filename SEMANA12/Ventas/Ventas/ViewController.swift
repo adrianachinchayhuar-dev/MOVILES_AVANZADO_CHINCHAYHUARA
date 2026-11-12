@@ -14,12 +14,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var usuarioTextField: UITextField!
     @IBOutlet weak var claveTextField: UITextField!
 
+    private var iniciandoSesion = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         claveTextField.isSecureTextEntry = true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        iniciandoSesion = false
+        usuarioTextField.text = ""
+        claveTextField.text = ""
+    }
+
     @IBAction func ingresar(_ sender: UIButton) {
+        guard !iniciandoSesion else { return }
         let nombreUsuario = usuarioTextField.text?
             .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let clave = claveTextField.text ?? ""
@@ -41,8 +51,13 @@ class ViewController: UIViewController {
 
         do {
             if let usuario = try contexto.fetch(solicitud).first {
+                guard ["Vendedor", "Supervisor"].contains(usuario.rol ?? "") else {
+                    mostrarAlerta("El usuario no tiene un rol habilitado.")
+                    return
+                }
+                iniciandoSesion = true
                 view.endEditing(true)
-                performSegue(withIdentifier: "loginAProductos", sender: usuario)
+                performSegue(withIdentifier: "loginAMenuPrincipal", sender: usuario)
             } else {
                 mostrarAlerta("Usuario o clave incorrectos")
             }
@@ -53,16 +68,11 @@ class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        guard segue.identifier == "loginAProductos",
-              let usuario = sender as? Usuario else { return }
-
-        let destino: ProductosViewController?
-        if let navegacion = segue.destination as? UINavigationController {
-            destino = navegacion.viewControllers.first as? ProductosViewController
-        } else {
-            destino = segue.destination as? ProductosViewController
-        }
-        destino?.usuarioSesion = usuario
+        guard segue.identifier == "loginAMenuPrincipal",
+              iniciandoSesion,
+              let usuario = sender as? Usuario,
+              let destino = segue.destination as? MenuPrincipalViewController else { return }
+        destino.usuarioSesion = usuario
     }
 
     func mostrarAlerta(_ mensaje: String) {
