@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-// Resumen conserva su implementación mínima. Ventas del equipo es solo consulta (A7).
+// Resumen conserva su implementación mínima. Ventas del equipo incluye A7 y anulación A8.
 final class SupervisorViewController: UITableViewController, UISearchBarDelegate {
     var usuarioSesion: Usuario? {
         didSet {
@@ -18,6 +18,7 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
     private var contexto: NSManagedObjectContext!
     private var ventas: [Venta] = []
     private var resumen: [(String, Int)] = []
+    private var anulando = false
     private var vendedorID: NSManagedObjectID?
     private let buscarSearchBar = UISearchBar()
     private let estadoSegmented = UISegmentedControl(items: ["Todas", "Activas", "Anuladas"])
@@ -232,7 +233,72 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         Estado: \(venta.anulada ? "Anulada" : "Activa")
         """ + (venta.anulada ? "\nMotivo: \(venta.motivoAnulacion ?? "Sin motivo registrado")" : "")
         let detalle = UIAlertController(title: "Detalle de venta", message: mensaje, preferredStyle: .alert)
+        if !venta.anulada {
+            let id = venta.objectID
+            detalle.addAction(UIAlertAction(title: "Anular venta", style: .destructive) { [weak self] _ in
+                self?.solicitarMotivo(ventaID: id)
+            })
+        }
         detalle.addAction(UIAlertAction(title: "Cerrar", style: .cancel))
         present(detalle, animated: true)
     }
+
+    private func solicitarMotivo(ventaID: NSManagedObjectID, texto: String = "") {
+        guard autorizado, !mostrarResumen, !anulando else { return }
+        let formulario = UIAlertController(title: "Anular venta", message: "Escribe el motivo. La cantidad vendida se devolverá al stock.", preferredStyle: .alert)
+        formulario.addTextField { campo in
+            campo.placeholder = "Motivo obligatorio"
+            campo.text = texto
+        }
+        formulario.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        formulario.addAction(UIAlertAction(title: "Continuar", style: .default) { [weak self, weak formulario] _ in
+            guard let self = self else { return }
+            let motivo = (formulario?.textFields?.first?.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !motivo.isEmpty else {
+                self.mostrarAviso("El motivo es obligatorio.") { [weak self] in
+                    self?.solicitarMotivo(ventaID: ventaID)
+                }
+                return
+            }
+            self.confirmarAnulacion(ventaID: ventaID, motivo: motivo)
+        })
+        present(formulario, animated: true)
+    }
+
+    private func confirmarAnulacion(ventaID: NSManagedObjectID, motivo: String) {
+        guard autorizado, !mostrarResumen, !anulando else { return }
+        let confirmacion = UIAlertController(title: "Confirmar anulación",
+            message: "¿Anular esta venta y devolver la cantidad vendida al stock?\nMotivo: \(motivo)", preferredStyle: .alert)
+        confirmacion.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        confirmacion.addAction(UIAlertAction(title: "Anular venta", style: .destructive) { [weak self] _ in
+            self?.anularVenta(ventaID: ventaID, motivo: motivo)
+        })
+        present(confirmacion, animated: true)
+    }
+
+    private func anularVenta(ventaID: NSManagedObjectID, motivo: String) {
+        guard autorizado, !mostrarResumen, !anulando, let usuario = usuarioSesion,
+              let coordinador = contexto.persistentStoreCoordinator else { return }
+        anulando = true
+        defer { anulando = false }
+        do {
+            try AnulacionVenta.ejecutar(coordinador: coordinador, usuarioID: usuario.objectID,
+                                       ventaID: ventaID, motivo: motivo)
+            contexto.refreshAllObjects()
+            cargar() // Mantiene la búsqueda y los filtros; desaparece de Activas.
+            mostrarAviso("Venta anulada. La cantidad vendida se devolvió al stock.")
+        } catch {
+            contexto.refreshAllObjects()
+            cargar()
+            mostrarAviso((error as? AnulacionVenta.ErrorAnulacion)?.localizedDescription
+                ?? "No se pudo anular la venta. No se aplicaron cambios. Actualiza el listado e inténtalo nuevamente.")
+        }
+    }
+
+    private func mostrarAviso(_ mensaje: String, alAceptar: (() -> Void)? = nil) {
+        let aviso = UIAlertController(title: "Ventas", message: mensaje, preferredStyle: .alert)
+        aviso.addAction(UIAlertAction(title: "Aceptar", style: .default) { _ in alAceptar?() })
+        present(aviso, animated: true)
+    }
+
 }
