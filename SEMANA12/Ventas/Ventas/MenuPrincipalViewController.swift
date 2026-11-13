@@ -28,7 +28,10 @@ final class MenuPrincipalViewController: UITabBarController {
         }
         let productos = pantalla("ProductosViewController", "Productos", "shippingbox")
         let clientes = pantalla("ClientesViewController", "Clientes", "person.2")
-        let cuenta = CuentaViewController(style: .insetGrouped)
+        guard let cuenta = storyboard.instantiateViewController(withIdentifier: "CuentaViewController") as? CuentaViewController else {
+            assertionFailure("La escena Cuenta debe utilizar CuentaViewController.")
+            return
+        }
         cuenta.usuarioSesion = usuario
         cuenta.alCerrarSesion = { [weak self] in self?.cerrarSesion() }
         let navegacionCuenta = UINavigationController(rootViewController: cuenta)

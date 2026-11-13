@@ -537,6 +537,163 @@
             </objects>
             <point key="canvasLocation" x="815" y="1001"/>
         </scene>
+        <!--Cuenta-->
+        <scene sceneID="cuenta-scene">
+            <objects>
+                <tableViewController storyboardIdentifier="CuentaViewController" id="cuenta-vc" customClass="CuentaViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" rowHeight="-1" estimatedRowHeight="80" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="cuenta-table">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="CUENTA" id="cuenta-section">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cuenta-nombre-cell">
+                                        <rect key="frame" x="16" y="55.333332061767578" width="361" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-nombre-cell" id="cuenta-nombre-content">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-stack">
+                                                    <rect key="frame" x="16" y="12" width="329" height="56"/>
+                                                    <subviews>
+                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Nombre" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-titulo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="31.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Nombre de la persona" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-valor">
+                                                            <rect key="frame" x="0.0" y="35.666666666666664" width="329" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cuenta-nombre-stack" secondAttribute="bottom" constant="12" id="cuenta-nombre-bottom"/>
+                                                <constraint firstItem="cuenta-nombre-stack" firstAttribute="leading" secondItem="cuenta-nombre-content" secondAttribute="leading" constant="16" id="cuenta-nombre-left"/>
+                                                <constraint firstAttribute="trailing" secondItem="cuenta-nombre-stack" secondAttribute="trailing" constant="16" id="cuenta-nombre-right"/>
+                                                <constraint firstItem="cuenta-nombre-stack" firstAttribute="top" secondItem="cuenta-nombre-content" secondAttribute="top" constant="12" id="cuenta-nombre-top"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cuenta-usuario-cell">
+                                        <rect key="frame" x="16" y="135.33333206176758" width="361" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-usuario-cell" id="cuenta-usuario-content">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-stack">
+                                                    <rect key="frame" x="16" y="12" width="329" height="56"/>
+                                                    <subviews>
+                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Usuario" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-titulo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="31.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Nombre de usuario" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-valor">
+                                                            <rect key="frame" x="0.0" y="35.666666666666664" width="329" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cuenta-usuario-stack" secondAttribute="bottom" constant="12" id="cuenta-usuario-bottom"/>
+                                                <constraint firstItem="cuenta-usuario-stack" firstAttribute="leading" secondItem="cuenta-usuario-content" secondAttribute="leading" constant="16" id="cuenta-usuario-left"/>
+                                                <constraint firstAttribute="trailing" secondItem="cuenta-usuario-stack" secondAttribute="trailing" constant="16" id="cuenta-usuario-right"/>
+                                                <constraint firstItem="cuenta-usuario-stack" firstAttribute="top" secondItem="cuenta-usuario-content" secondAttribute="top" constant="12" id="cuenta-usuario-top"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cuenta-rol-cell">
+                                        <rect key="frame" x="16" y="215.33333206176758" width="361" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-rol-cell" id="cuenta-rol-content">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-stack">
+                                                    <rect key="frame" x="16" y="12" width="329" height="56"/>
+                                                    <subviews>
+                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Rol" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-titulo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="31.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Rol de la sesión" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-valor">
+                                                            <rect key="frame" x="0.0" y="35.666666666666664" width="329" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cuenta-rol-stack" secondAttribute="bottom" constant="12" id="cuenta-rol-bottom"/>
+                                                <constraint firstItem="cuenta-rol-stack" firstAttribute="leading" secondItem="cuenta-rol-content" secondAttribute="leading" constant="16" id="cuenta-rol-left"/>
+                                                <constraint firstAttribute="trailing" secondItem="cuenta-rol-stack" secondAttribute="trailing" constant="16" id="cuenta-rol-right"/>
+                                                <constraint firstItem="cuenta-rol-stack" firstAttribute="top" secondItem="cuenta-rol-content" secondAttribute="top" constant="12" id="cuenta-rol-top"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="68" id="cuenta-salir-cell">
+                                        <rect key="frame" x="16" y="295.33333206176758" width="361" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-salir-cell" id="cuenta-salir-content">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="68"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-salir-button">
+                                                    <rect key="frame" x="16" y="12" width="329" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="cuenta-salir-height"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Cerrar sesión">
+                                                        <color key="titleColor" red="1" green="0.23000000000000001" blue="0.19" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="cerrarSesion:" destination="cuenta-vc" eventType="touchUpInside" id="cuenta-salir-action"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cuenta-salir-button" secondAttribute="bottom" constant="12" id="cuenta-salir-bottom"/>
+                                                <constraint firstItem="cuenta-salir-button" firstAttribute="leading" secondItem="cuenta-salir-content" secondAttribute="leading" constant="16" id="cuenta-salir-left"/>
+                                                <constraint firstAttribute="trailing" secondItem="cuenta-salir-button" secondAttribute="trailing" constant="16" id="cuenta-salir-right"/>
+                                                <constraint firstItem="cuenta-salir-button" firstAttribute="top" secondItem="cuenta-salir-content" secondAttribute="top" constant="12" id="cuenta-salir-top"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="cuenta-vc" id="cuenta-datasource"/>
+                            <outlet property="delegate" destination="cuenta-vc" id="cuenta-delegate"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Cuenta" id="cuenta-navigation"/>
+                    <connections>
+                        <outlet property="nombreLabel" destination="cuenta-nombre-valor" id="cuenta-nombre-outlet"/>
+                        <outlet property="rolLabel" destination="cuenta-rol-valor" id="cuenta-rol-outlet"/>
+                        <outlet property="usuarioLabel" destination="cuenta-usuario-valor" id="cuenta-usuario-outlet"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cuenta-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3839" y="1001"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
