@@ -932,155 +932,196 @@
         <scene sceneID="cuenta-scene">
             <objects>
                 <tableViewController storyboardIdentifier="CuentaViewController" id="cuenta-vc" customClass="CuentaViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" rowHeight="-1" estimatedRowHeight="80" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="cuenta-table">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="CUENTA" id="cuenta-section">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cuenta-nombre-cell">
-                                        <rect key="frame" x="16" y="55.333332061767578" width="361" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-nombre-cell" id="cuenta-nombre-content">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-stack">
-                                                    <rect key="frame" x="16" y="12" width="329" height="56"/>
-                                                    <subviews>
-                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Nombre" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-titulo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="31.666666666666668"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Nombre de la persona" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-valor">
-                                                            <rect key="frame" x="0.0" y="35.666666666666664" width="329" height="20.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="cuenta-nombre-stack" secondAttribute="bottom" constant="12" id="cuenta-nombre-bottom"/>
-                                                <constraint firstItem="cuenta-nombre-stack" firstAttribute="leading" secondItem="cuenta-nombre-content" secondAttribute="leading" constant="16" id="cuenta-nombre-left"/>
-                                                <constraint firstAttribute="trailing" secondItem="cuenta-nombre-stack" secondAttribute="trailing" constant="16" id="cuenta-nombre-right"/>
-                                                <constraint firstItem="cuenta-nombre-stack" firstAttribute="top" secondItem="cuenta-nombre-content" secondAttribute="top" constant="12" id="cuenta-nombre-top"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cuenta-usuario-cell">
-                                        <rect key="frame" x="16" y="135.33333206176758" width="361" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-usuario-cell" id="cuenta-usuario-content">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-stack">
-                                                    <rect key="frame" x="16" y="12" width="329" height="56"/>
-                                                    <subviews>
-                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Usuario" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-titulo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="31.666666666666668"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Nombre de usuario" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-valor">
-                                                            <rect key="frame" x="0.0" y="35.666666666666664" width="329" height="20.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="cuenta-usuario-stack" secondAttribute="bottom" constant="12" id="cuenta-usuario-bottom"/>
-                                                <constraint firstItem="cuenta-usuario-stack" firstAttribute="leading" secondItem="cuenta-usuario-content" secondAttribute="leading" constant="16" id="cuenta-usuario-left"/>
-                                                <constraint firstAttribute="trailing" secondItem="cuenta-usuario-stack" secondAttribute="trailing" constant="16" id="cuenta-usuario-right"/>
-                                                <constraint firstItem="cuenta-usuario-stack" firstAttribute="top" secondItem="cuenta-usuario-content" secondAttribute="top" constant="12" id="cuenta-usuario-top"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="cuenta-rol-cell">
-                                        <rect key="frame" x="16" y="215.33333206176758" width="361" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-rol-cell" id="cuenta-rol-content">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-stack">
-                                                    <rect key="frame" x="16" y="12" width="329" height="56"/>
-                                                    <subviews>
-                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Rol" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-titulo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="31.666666666666668"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Rol de la sesión" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-valor">
-                                                            <rect key="frame" x="0.0" y="35.666666666666664" width="329" height="20.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="cuenta-rol-stack" secondAttribute="bottom" constant="12" id="cuenta-rol-bottom"/>
-                                                <constraint firstItem="cuenta-rol-stack" firstAttribute="leading" secondItem="cuenta-rol-content" secondAttribute="leading" constant="16" id="cuenta-rol-left"/>
-                                                <constraint firstAttribute="trailing" secondItem="cuenta-rol-stack" secondAttribute="trailing" constant="16" id="cuenta-rol-right"/>
-                                                <constraint firstItem="cuenta-rol-stack" firstAttribute="top" secondItem="cuenta-rol-content" secondAttribute="top" constant="12" id="cuenta-rol-top"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="68" id="cuenta-salir-cell">
-                                        <rect key="frame" x="16" y="295.33333206176758" width="361" height="68"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-salir-cell" id="cuenta-salir-content">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="68"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-salir-button">
-                                                    <rect key="frame" x="16" y="12" width="329" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="cuenta-salir-height"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Cerrar sesión">
-                                                        <color key="titleColor" red="1" green="0.23000000000000001" blue="0.19" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="cerrarSesion:" destination="cuenta-vc" eventType="touchUpInside" id="cuenta-salir-action"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="cuenta-salir-button" secondAttribute="bottom" constant="12" id="cuenta-salir-bottom"/>
-                                                <constraint firstItem="cuenta-salir-button" firstAttribute="leading" secondItem="cuenta-salir-content" secondAttribute="leading" constant="16" id="cuenta-salir-left"/>
-                                                <constraint firstAttribute="trailing" secondItem="cuenta-salir-button" secondAttribute="trailing" constant="16" id="cuenta-salir-right"/>
-                                                <constraint firstItem="cuenta-salir-button" firstAttribute="top" secondItem="cuenta-salir-content" secondAttribute="top" constant="12" id="cuenta-salir-top"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="cuenta-vc" id="cuenta-datasource"/>
-                            <outlet property="delegate" destination="cuenta-vc" id="cuenta-delegate"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Cuenta" id="cuenta-navigation"/>
-                    <connections>
-                        <outlet property="nombreLabel" destination="cuenta-nombre-valor" id="cuenta-nombre-outlet"/>
-                        <outlet property="rolLabel" destination="cuenta-rol-valor" id="cuenta-rol-outlet"/>
-                        <outlet property="usuarioLabel" destination="cuenta-usuario-valor" id="cuenta-usuario-outlet"/>
-                    </connections>
-                </tableViewController>
+    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" rowHeight="-1" estimatedRowHeight="80" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="cuenta-table">
+        <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <view key="tableHeaderView" id="cuenta-v5-header" contentMode="scaleToFill">
+            <rect key="frame" x="0" y="0" width="393" height="102.0" />
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" />
+            <subviews>
+                <stackView id="cuenta-v5-heading" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="20" y="20" width="353" height="62.0" />
+                    <subviews>
+                        <label id="cuenta-v5-title" opaque="NO" contentMode="left" text="CUENTA" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" lineBreakMode="wordWrap">
+                            <rect key="frame" x="0" y="0" width="353" height="34" />
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        </label>
+                        <label id="cuenta-v5-subtitle" opaque="NO" contentMode="left" text="Información de tu cuenta" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" lineBreakMode="wordWrap">
+                            <rect key="frame" x="0" y="42.0" width="353" height="20" />
+                            <fontDescription key="fontDescription" type="system" pointSize="16" />
+                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint id="cuenta-v5-header-top" firstItem="cuenta-v5-heading" firstAttribute="top" secondItem="cuenta-v5-header" secondAttribute="top" constant="20" />
+                <constraint id="cuenta-v5-header-left" firstItem="cuenta-v5-heading" firstAttribute="leading" secondItem="cuenta-v5-header" secondAttribute="leading" constant="20" />
+                <constraint id="cuenta-v5-header-right" firstItem="cuenta-v5-header" firstAttribute="trailing" secondItem="cuenta-v5-heading" secondAttribute="trailing" constant="20" />
+                <constraint id="cuenta-v5-header-bottom" firstItem="cuenta-v5-header" firstAttribute="bottom" secondItem="cuenta-v5-heading" secondAttribute="bottom" constant="20" />
+            </constraints>
+        </view>
+        <sections>
+            <tableViewSection headerTitle="INFORMACIÓN PERSONAL" id="cuenta-section">
+                <cells>
+                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="81.0" id="cuenta-nombre-cell">
+                        <rect key="frame" x="20" y="138.0" width="353" height="81.0" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-nombre-cell" id="cuenta-nombre-content">
+                            <rect key="frame" x="0" y="0" width="353" height="81.0" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-stack">
+                                    <rect key="frame" x="16" y="16" width="321" height="49.0" />
+                                    <subviews>
+                                        <label opaque="NO" contentMode="left" text="Nombre" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-titulo" verticalHuggingPriority="252">
+                                            <rect key="frame" x="0" y="0" width="321" height="17" />
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <label opaque="NO" contentMode="left" text="Nombre de la persona" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-nombre-valor" verticalHuggingPriority="251">
+                                            <rect key="frame" x="0" y="25.0" width="321" height="24" />
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20" />
+                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cuenta-nombre-stack" secondAttribute="bottom" constant="16" id="cuenta-nombre-bottom" />
+                                <constraint firstItem="cuenta-nombre-stack" firstAttribute="leading" secondItem="cuenta-nombre-content" secondAttribute="leading" constant="16" id="cuenta-nombre-left" />
+                                <constraint firstAttribute="trailing" secondItem="cuenta-nombre-stack" secondAttribute="trailing" constant="16" id="cuenta-nombre-right" />
+                                <constraint firstItem="cuenta-nombre-stack" firstAttribute="top" secondItem="cuenta-nombre-content" secondAttribute="top" constant="16" id="cuenta-nombre-top" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                    </tableViewCell>
+                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="81.0" id="cuenta-usuario-cell">
+                        <rect key="frame" x="20" y="219.0" width="353" height="81.0" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-usuario-cell" id="cuenta-usuario-content">
+                            <rect key="frame" x="0" y="0" width="353" height="81.0" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-stack">
+                                    <rect key="frame" x="16" y="16" width="321" height="49.0" />
+                                    <subviews>
+                                        <label opaque="NO" contentMode="left" text="Usuario" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-titulo" verticalHuggingPriority="252">
+                                            <rect key="frame" x="0" y="0" width="321" height="17" />
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <label opaque="NO" contentMode="left" text="Nombre de usuario" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-usuario-valor" verticalHuggingPriority="251">
+                                            <rect key="frame" x="0" y="25.0" width="321" height="24" />
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20" />
+                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cuenta-usuario-stack" secondAttribute="bottom" constant="16" id="cuenta-usuario-bottom" />
+                                <constraint firstItem="cuenta-usuario-stack" firstAttribute="leading" secondItem="cuenta-usuario-content" secondAttribute="leading" constant="16" id="cuenta-usuario-left" />
+                                <constraint firstAttribute="trailing" secondItem="cuenta-usuario-stack" secondAttribute="trailing" constant="16" id="cuenta-usuario-right" />
+                                <constraint firstItem="cuenta-usuario-stack" firstAttribute="top" secondItem="cuenta-usuario-content" secondAttribute="top" constant="16" id="cuenta-usuario-top" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                    </tableViewCell>
+                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="81.0" id="cuenta-rol-cell">
+                        <rect key="frame" x="20" y="300.0" width="353" height="81.0" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-rol-cell" id="cuenta-rol-content">
+                            <rect key="frame" x="0" y="0" width="353" height="81.0" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-stack">
+                                    <rect key="frame" x="16" y="16" width="321" height="49.0" />
+                                    <subviews>
+                                        <label opaque="NO" contentMode="left" text="Rol" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-titulo" verticalHuggingPriority="252">
+                                            <rect key="frame" x="0" y="0" width="321" height="17" />
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <label opaque="NO" contentMode="left" text="Rol de la sesión" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-rol-valor" verticalHuggingPriority="251">
+                                            <rect key="frame" x="0" y="25.0" width="321" height="24" />
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20" />
+                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cuenta-rol-stack" secondAttribute="bottom" constant="16" id="cuenta-rol-bottom" />
+                                <constraint firstItem="cuenta-rol-stack" firstAttribute="leading" secondItem="cuenta-rol-content" secondAttribute="leading" constant="16" id="cuenta-rol-left" />
+                                <constraint firstAttribute="trailing" secondItem="cuenta-rol-stack" secondAttribute="trailing" constant="16" id="cuenta-rol-right" />
+                                <constraint firstItem="cuenta-rol-stack" firstAttribute="top" secondItem="cuenta-rol-content" secondAttribute="top" constant="16" id="cuenta-rol-top" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                    </tableViewCell>
+                </cells>
+            </tableViewSection>
+            <tableViewSection headerTitle="SESIÓN" id="cuenta-v5-sesion">
+                <cells>
+                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="88" id="cuenta-salir-cell">
+                        <rect key="frame" x="20" y="441.0" width="353" height="88" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuenta-salir-cell" id="cuenta-salir-content">
+                            <rect key="frame" x="0" y="0" width="353" height="88" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cuenta-salir-button">
+                                    <rect key="frame" x="16" y="16" width="321" height="56" />
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="cuenta-salir-height" />
+                                    </constraints>
+                                    <state key="normal" title="Cerrar sesión">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    </state>
+                                    <connections>
+                                        <action selector="cerrarSesion:" destination="cuenta-vc" eventType="touchUpInside" id="cuenta-salir-action" />
+                                    </connections>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17" />
+                                    <color key="backgroundColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <real key="value" value="12" />
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cuenta-salir-button" secondAttribute="bottom" constant="16" id="cuenta-salir-bottom" />
+                                <constraint firstItem="cuenta-salir-button" firstAttribute="leading" secondItem="cuenta-salir-content" secondAttribute="leading" constant="16" id="cuenta-salir-left" />
+                                <constraint firstAttribute="trailing" secondItem="cuenta-salir-button" secondAttribute="trailing" constant="16" id="cuenta-salir-right" />
+                                <constraint firstItem="cuenta-salir-button" firstAttribute="top" secondItem="cuenta-salir-content" secondAttribute="top" constant="16" id="cuenta-salir-top" />
+                            </constraints>
+                        </tableViewCellContentView>
+                    </tableViewCell>
+                </cells>
+            </tableViewSection>
+        </sections>
+        <connections>
+            <outlet property="dataSource" destination="cuenta-vc" id="cuenta-datasource" />
+            <outlet property="delegate" destination="cuenta-vc" id="cuenta-delegate" />
+        </connections>
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+    </tableView>
+    <navigationItem key="navigationItem" title="Cuenta" id="cuenta-navigation" />
+    <connections>
+        <outlet property="nombreLabel" destination="cuenta-nombre-valor" id="cuenta-nombre-outlet" />
+        <outlet property="rolLabel" destination="cuenta-rol-valor" id="cuenta-rol-outlet" />
+        <outlet property="usuarioLabel" destination="cuenta-usuario-valor" id="cuenta-usuario-outlet" />
+    </connections>
+</tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuenta-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4479" y="1294"/>
@@ -1089,277 +1130,337 @@
         <scene sceneID="resumen-scene">
             <objects>
                 <tableViewController storyboardIdentifier="ResumenSupervisorViewController" id="resumen-vc" customClass="SupervisorViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="154" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="resumen-table">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="RESUMEN DEL SUPERVISOR" id="resumen-section">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="154" id="resumen-row0-cell">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="154"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="resumen-row0-cell" id="resumen-row0-content">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="154"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="154" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="resumen-table">
+        <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <view key="tableHeaderView" id="resumen-v5-header" contentMode="scaleToFill">
+            <rect key="frame" x="0" y="0" width="393" height="102.0" />
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" />
+            <subviews>
+                <stackView id="resumen-v5-heading" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="20" y="20" width="353" height="62.0" />
+                    <subviews>
+                        <label id="resumen-v5-title" opaque="NO" contentMode="left" text="RESUMEN" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" lineBreakMode="wordWrap">
+                            <rect key="frame" x="0" y="0" width="353" height="34" />
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        </label>
+                        <label id="resumen-v5-subtitle" opaque="NO" contentMode="left" text="Indicadores de tu equipo" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" lineBreakMode="wordWrap">
+                            <rect key="frame" x="0" y="42.0" width="353" height="20" />
+                            <fontDescription key="fontDescription" type="system" pointSize="16" />
+                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint id="resumen-v5-header-top" firstItem="resumen-v5-heading" firstAttribute="top" secondItem="resumen-v5-header" secondAttribute="top" constant="20" />
+                <constraint id="resumen-v5-header-left" firstItem="resumen-v5-heading" firstAttribute="leading" secondItem="resumen-v5-header" secondAttribute="leading" constant="20" />
+                <constraint id="resumen-v5-header-right" firstItem="resumen-v5-header" firstAttribute="trailing" secondItem="resumen-v5-heading" secondAttribute="trailing" constant="20" />
+                <constraint id="resumen-v5-header-bottom" firstItem="resumen-v5-header" firstAttribute="bottom" secondItem="resumen-v5-heading" secondAttribute="bottom" constant="20" />
+            </constraints>
+        </view>
+        <sections>
+            <tableViewSection id="resumen-section">
+                <cells>
+                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="164" id="resumen-row0-cell">
+                        <rect key="frame" x="0" y="102.0" width="393" height="164" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="resumen-row0-cell" id="resumen-row0-content">
+                            <rect key="frame" x="0" y="0" width="393" height="164" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-row0-stack">
+                                    <rect key="frame" x="16" y="8" width="361" height="148" />
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-card">
+                                            <rect key="frame" x="0.0" y="0" width="174.5" height="148" />
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-row0-stack">
-                                                    <rect key="frame" x="12" y="12" width="369" height="130"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-stack">
+                                                    <rect key="frame" x="16" y="16" width="142.5" height="116" />
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-card">
-                                                            <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="130"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-stack">
-                                                                    <rect key="frame" x="12" y="12" width="154.66666666666666" height="106"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" contentMode="left" text="Total de productos" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-titulo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="18"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-valor">
-                                                                            <rect key="frame" x="0.0" y="79.666666666666671" width="154.66666666666666" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.94999999999999996" green="0.95999999999999996" blue="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="resumen-productos-stack" secondAttribute="bottom" constant="12" id="resumen-productos-bottom"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="resumen-productos-height"/>
-                                                                <constraint firstItem="resumen-productos-stack" firstAttribute="leading" secondItem="resumen-productos-card" secondAttribute="leading" constant="12" id="resumen-productos-left"/>
-                                                                <constraint firstAttribute="trailing" secondItem="resumen-productos-stack" secondAttribute="trailing" constant="12" id="resumen-productos-right"/>
-                                                                <constraint firstItem="resumen-productos-stack" firstAttribute="top" secondItem="resumen-productos-card" secondAttribute="top" constant="12" id="resumen-productos-top"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-card">
-                                                            <rect key="frame" x="190.66666666666663" y="0.0" width="178.33333333333337" height="130"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-stack">
-                                                                    <rect key="frame" x="12" y="12" width="154.33333333333334" height="106"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" contentMode="left" text="Total de clientes" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-titulo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="18"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-valor">
-                                                                            <rect key="frame" x="0.0" y="79.666666666666671" width="154.33333333333334" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.94999999999999996" green="0.95999999999999996" blue="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="resumen-clientes-stack" secondAttribute="bottom" constant="12" id="resumen-clientes-bottom"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="resumen-clientes-height"/>
-                                                                <constraint firstItem="resumen-clientes-stack" firstAttribute="leading" secondItem="resumen-clientes-card" secondAttribute="leading" constant="12" id="resumen-clientes-left"/>
-                                                                <constraint firstAttribute="trailing" secondItem="resumen-clientes-stack" secondAttribute="trailing" constant="12" id="resumen-clientes-right"/>
-                                                                <constraint firstItem="resumen-clientes-stack" firstAttribute="top" secondItem="resumen-clientes-card" secondAttribute="top" constant="12" id="resumen-clientes-top"/>
-                                                            </constraints>
-                                                        </view>
+                                                        <label opaque="NO" contentMode="left" text="Total de productos" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-titulo" verticalHuggingPriority="252">
+                                                            <rect key="frame" x="0" y="0" width="142.5" height="17" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-productos-valor" verticalHuggingPriority="251">
+                                                            <rect key="frame" x="0" y="29" width="142.5" height="87" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26" />
+                                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="resumen-row0-stack" secondAttribute="bottom" constant="12" id="resumen-row0-bottom"/>
-                                                <constraint firstItem="resumen-row0-stack" firstAttribute="leading" secondItem="resumen-row0-content" secondAttribute="leading" constant="12" id="resumen-row0-left"/>
-                                                <constraint firstAttribute="trailing" secondItem="resumen-row0-stack" secondAttribute="trailing" constant="12" id="resumen-row0-right"/>
-                                                <constraint firstItem="resumen-row0-stack" firstAttribute="top" secondItem="resumen-row0-content" secondAttribute="top" constant="12" id="resumen-row0-top"/>
+                                                <constraint firstAttribute="bottom" secondItem="resumen-productos-stack" secondAttribute="bottom" constant="16" id="resumen-productos-bottom" />
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="resumen-productos-height" />
+                                                <constraint firstItem="resumen-productos-stack" firstAttribute="leading" secondItem="resumen-productos-card" secondAttribute="leading" constant="16" id="resumen-productos-left" />
+                                                <constraint firstAttribute="trailing" secondItem="resumen-productos-stack" secondAttribute="trailing" constant="16" id="resumen-productos-right" />
+                                                <constraint firstItem="resumen-productos-stack" firstAttribute="top" secondItem="resumen-productos-card" secondAttribute="top" constant="16" id="resumen-productos-top" />
                                             </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="154" id="resumen-row1-cell">
-                                        <rect key="frame" x="0.0" y="204" width="393" height="154"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="resumen-row1-cell" id="resumen-row1-content">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="154"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="16" />
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-card">
+                                            <rect key="frame" x="186.5" y="0" width="174.5" height="148" />
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-row1-stack">
-                                                    <rect key="frame" x="12" y="12" width="369" height="130"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-stack">
+                                                    <rect key="frame" x="16" y="16" width="142.5" height="116" />
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-card">
-                                                            <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="130"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-stack">
-                                                                    <rect key="frame" x="12" y="12" width="154.66666666666666" height="106"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" contentMode="left" text="Ventas registradas" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-titulo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="18"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-valor">
-                                                                            <rect key="frame" x="0.0" y="79.666666666666671" width="154.66666666666666" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.94999999999999996" green="0.95999999999999996" blue="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="resumen-registradas-stack" secondAttribute="bottom" constant="12" id="resumen-registradas-bottom"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="resumen-registradas-height"/>
-                                                                <constraint firstItem="resumen-registradas-stack" firstAttribute="leading" secondItem="resumen-registradas-card" secondAttribute="leading" constant="12" id="resumen-registradas-left"/>
-                                                                <constraint firstAttribute="trailing" secondItem="resumen-registradas-stack" secondAttribute="trailing" constant="12" id="resumen-registradas-right"/>
-                                                                <constraint firstItem="resumen-registradas-stack" firstAttribute="top" secondItem="resumen-registradas-card" secondAttribute="top" constant="12" id="resumen-registradas-top"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-card">
-                                                            <rect key="frame" x="190.66666666666663" y="0.0" width="178.33333333333337" height="130"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-stack">
-                                                                    <rect key="frame" x="12" y="12" width="154.33333333333334" height="106"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" contentMode="left" text="Ventas efectivas" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-titulo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="18"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-valor">
-                                                                            <rect key="frame" x="0.0" y="79.666666666666671" width="154.33333333333334" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.94999999999999996" green="0.95999999999999996" blue="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="resumen-efectivas-stack" secondAttribute="bottom" constant="12" id="resumen-efectivas-bottom"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="resumen-efectivas-height"/>
-                                                                <constraint firstItem="resumen-efectivas-stack" firstAttribute="leading" secondItem="resumen-efectivas-card" secondAttribute="leading" constant="12" id="resumen-efectivas-left"/>
-                                                                <constraint firstAttribute="trailing" secondItem="resumen-efectivas-stack" secondAttribute="trailing" constant="12" id="resumen-efectivas-right"/>
-                                                                <constraint firstItem="resumen-efectivas-stack" firstAttribute="top" secondItem="resumen-efectivas-card" secondAttribute="top" constant="12" id="resumen-efectivas-top"/>
-                                                            </constraints>
-                                                        </view>
+                                                        <label opaque="NO" contentMode="left" text="Total de clientes" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-titulo" verticalHuggingPriority="252">
+                                                            <rect key="frame" x="0" y="0" width="142.5" height="17" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-clientes-valor" verticalHuggingPriority="251">
+                                                            <rect key="frame" x="0" y="29" width="142.5" height="87" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26" />
+                                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="resumen-row1-stack" secondAttribute="bottom" constant="12" id="resumen-row1-bottom"/>
-                                                <constraint firstItem="resumen-row1-stack" firstAttribute="leading" secondItem="resumen-row1-content" secondAttribute="leading" constant="12" id="resumen-row1-left"/>
-                                                <constraint firstAttribute="trailing" secondItem="resumen-row1-stack" secondAttribute="trailing" constant="12" id="resumen-row1-right"/>
-                                                <constraint firstItem="resumen-row1-stack" firstAttribute="top" secondItem="resumen-row1-content" secondAttribute="top" constant="12" id="resumen-row1-top"/>
+                                                <constraint firstAttribute="bottom" secondItem="resumen-clientes-stack" secondAttribute="bottom" constant="16" id="resumen-clientes-bottom" />
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="resumen-clientes-height" />
+                                                <constraint firstItem="resumen-clientes-stack" firstAttribute="leading" secondItem="resumen-clientes-card" secondAttribute="leading" constant="16" id="resumen-clientes-left" />
+                                                <constraint firstAttribute="trailing" secondItem="resumen-clientes-stack" secondAttribute="trailing" constant="16" id="resumen-clientes-right" />
+                                                <constraint firstItem="resumen-clientes-stack" firstAttribute="top" secondItem="resumen-clientes-card" secondAttribute="top" constant="16" id="resumen-clientes-top" />
                                             </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="154" id="resumen-row2-cell">
-                                        <rect key="frame" x="0.0" y="358" width="393" height="154"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="resumen-row2-cell" id="resumen-row2-content">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="154"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="16" />
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="resumen-row0-stack" secondAttribute="bottom" constant="8" id="resumen-row0-bottom" />
+                                <constraint firstItem="resumen-row0-stack" firstAttribute="leading" secondItem="resumen-row0-content" secondAttribute="leading" constant="16" id="resumen-row0-left" />
+                                <constraint firstAttribute="trailing" secondItem="resumen-row0-stack" secondAttribute="trailing" constant="16" id="resumen-row0-right" />
+                                <constraint firstItem="resumen-row0-stack" firstAttribute="top" secondItem="resumen-row0-content" secondAttribute="top" constant="8" id="resumen-row0-top" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                    </tableViewCell>
+                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="164" id="resumen-row1-cell">
+                        <rect key="frame" x="0" y="266.0" width="393" height="164" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="resumen-row1-cell" id="resumen-row1-content">
+                            <rect key="frame" x="0" y="0" width="393" height="164" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-row1-stack">
+                                    <rect key="frame" x="16" y="8" width="361" height="148" />
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-card">
+                                            <rect key="frame" x="0.0" y="0" width="174.5" height="148" />
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-row2-stack">
-                                                    <rect key="frame" x="12" y="12" width="369" height="130"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-stack">
+                                                    <rect key="frame" x="16" y="16" width="142.5" height="116" />
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-card">
-                                                            <rect key="frame" x="0.0" y="0.0" width="178.66666666666666" height="130"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-stack">
-                                                                    <rect key="frame" x="12" y="12" width="154.66666666666666" height="106"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" contentMode="left" text="Ventas anuladas" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-titulo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="18"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-valor">
-                                                                            <rect key="frame" x="0.0" y="79.666666666666671" width="154.66666666666666" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.94999999999999996" green="0.95999999999999996" blue="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="resumen-anuladas-stack" secondAttribute="bottom" constant="12" id="resumen-anuladas-bottom"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="resumen-anuladas-height"/>
-                                                                <constraint firstItem="resumen-anuladas-stack" firstAttribute="leading" secondItem="resumen-anuladas-card" secondAttribute="leading" constant="12" id="resumen-anuladas-left"/>
-                                                                <constraint firstAttribute="trailing" secondItem="resumen-anuladas-stack" secondAttribute="trailing" constant="12" id="resumen-anuladas-right"/>
-                                                                <constraint firstItem="resumen-anuladas-stack" firstAttribute="top" secondItem="resumen-anuladas-card" secondAttribute="top" constant="12" id="resumen-anuladas-top"/>
-                                                            </constraints>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-card">
-                                                            <rect key="frame" x="190.66666666666663" y="0.0" width="178.33333333333337" height="130"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-stack">
-                                                                    <rect key="frame" x="12" y="12" width="154.33333333333334" height="106"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" contentMode="left" text="Ingresos efectivos" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-titulo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="18"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" contentMode="left" text="S/ 0.00" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-valor">
-                                                                            <rect key="frame" x="0.0" y="79.666666666666671" width="154.33333333333334" height="26.333333333333329"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" red="0.94999999999999996" green="0.95999999999999996" blue="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="resumen-ingresos-stack" secondAttribute="bottom" constant="12" id="resumen-ingresos-bottom"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="resumen-ingresos-height"/>
-                                                                <constraint firstItem="resumen-ingresos-stack" firstAttribute="leading" secondItem="resumen-ingresos-card" secondAttribute="leading" constant="12" id="resumen-ingresos-left"/>
-                                                                <constraint firstAttribute="trailing" secondItem="resumen-ingresos-stack" secondAttribute="trailing" constant="12" id="resumen-ingresos-right"/>
-                                                                <constraint firstItem="resumen-ingresos-stack" firstAttribute="top" secondItem="resumen-ingresos-card" secondAttribute="top" constant="12" id="resumen-ingresos-top"/>
-                                                            </constraints>
-                                                        </view>
+                                                        <label opaque="NO" contentMode="left" text="Ventas registradas" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-titulo" verticalHuggingPriority="252">
+                                                            <rect key="frame" x="0" y="0" width="142.5" height="17" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-registradas-valor" verticalHuggingPriority="251">
+                                                            <rect key="frame" x="0" y="29" width="142.5" height="87" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26" />
+                                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="resumen-row2-stack" secondAttribute="bottom" constant="12" id="resumen-row2-bottom"/>
-                                                <constraint firstItem="resumen-row2-stack" firstAttribute="leading" secondItem="resumen-row2-content" secondAttribute="leading" constant="12" id="resumen-row2-left"/>
-                                                <constraint firstAttribute="trailing" secondItem="resumen-row2-stack" secondAttribute="trailing" constant="12" id="resumen-row2-right"/>
-                                                <constraint firstItem="resumen-row2-stack" firstAttribute="top" secondItem="resumen-row2-content" secondAttribute="top" constant="12" id="resumen-row2-top"/>
+                                                <constraint firstAttribute="bottom" secondItem="resumen-registradas-stack" secondAttribute="bottom" constant="16" id="resumen-registradas-bottom" />
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="resumen-registradas-height" />
+                                                <constraint firstItem="resumen-registradas-stack" firstAttribute="leading" secondItem="resumen-registradas-card" secondAttribute="leading" constant="16" id="resumen-registradas-left" />
+                                                <constraint firstAttribute="trailing" secondItem="resumen-registradas-stack" secondAttribute="trailing" constant="16" id="resumen-registradas-right" />
+                                                <constraint firstItem="resumen-registradas-stack" firstAttribute="top" secondItem="resumen-registradas-card" secondAttribute="top" constant="16" id="resumen-registradas-top" />
                                             </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="resumen-vc" id="resumen-datasource"/>
-                            <outlet property="delegate" destination="resumen-vc" id="resumen-delegate"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Resumen" id="resumen-navigation"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="mostrarResumen" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="anuladasResumenLabel" destination="resumen-anuladas-valor" id="resumen-anuladas-outlet"/>
-                        <outlet property="clientesResumenLabel" destination="resumen-clientes-valor" id="resumen-clientes-outlet"/>
-                        <outlet property="efectivasResumenLabel" destination="resumen-efectivas-valor" id="resumen-efectivas-outlet"/>
-                        <outlet property="ingresosResumenLabel" destination="resumen-ingresos-valor" id="resumen-ingresos-outlet"/>
-                        <outlet property="productosResumenLabel" destination="resumen-productos-valor" id="resumen-productos-outlet"/>
-                        <outlet property="registradasResumenLabel" destination="resumen-registradas-valor" id="resumen-registradas-outlet"/>
-                    </connections>
-                </tableViewController>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="16" />
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-card">
+                                            <rect key="frame" x="186.5" y="0" width="174.5" height="148" />
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-stack">
+                                                    <rect key="frame" x="16" y="16" width="142.5" height="116" />
+                                                    <subviews>
+                                                        <label opaque="NO" contentMode="left" text="Ventas efectivas" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-titulo" verticalHuggingPriority="252">
+                                                            <rect key="frame" x="0" y="0" width="142.5" height="17" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-efectivas-valor" verticalHuggingPriority="251">
+                                                            <rect key="frame" x="0" y="29" width="142.5" height="87" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26" />
+                                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="resumen-efectivas-stack" secondAttribute="bottom" constant="16" id="resumen-efectivas-bottom" />
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="resumen-efectivas-height" />
+                                                <constraint firstItem="resumen-efectivas-stack" firstAttribute="leading" secondItem="resumen-efectivas-card" secondAttribute="leading" constant="16" id="resumen-efectivas-left" />
+                                                <constraint firstAttribute="trailing" secondItem="resumen-efectivas-stack" secondAttribute="trailing" constant="16" id="resumen-efectivas-right" />
+                                                <constraint firstItem="resumen-efectivas-stack" firstAttribute="top" secondItem="resumen-efectivas-card" secondAttribute="top" constant="16" id="resumen-efectivas-top" />
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="16" />
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="resumen-row1-stack" secondAttribute="bottom" constant="8" id="resumen-row1-bottom" />
+                                <constraint firstItem="resumen-row1-stack" firstAttribute="leading" secondItem="resumen-row1-content" secondAttribute="leading" constant="16" id="resumen-row1-left" />
+                                <constraint firstAttribute="trailing" secondItem="resumen-row1-stack" secondAttribute="trailing" constant="16" id="resumen-row1-right" />
+                                <constraint firstItem="resumen-row1-stack" firstAttribute="top" secondItem="resumen-row1-content" secondAttribute="top" constant="8" id="resumen-row1-top" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                    </tableViewCell>
+                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="164" id="resumen-row2-cell">
+                        <rect key="frame" x="0" y="430.0" width="393" height="164" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="resumen-row2-cell" id="resumen-row2-content">
+                            <rect key="frame" x="0" y="0" width="393" height="164" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-row2-stack">
+                                    <rect key="frame" x="16" y="8" width="361" height="148" />
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-card">
+                                            <rect key="frame" x="0.0" y="0" width="174.5" height="148" />
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-stack">
+                                                    <rect key="frame" x="16" y="16" width="142.5" height="116" />
+                                                    <subviews>
+                                                        <label opaque="NO" contentMode="left" text="Ventas anuladas" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-titulo" verticalHuggingPriority="252">
+                                                            <rect key="frame" x="0" y="0" width="142.5" height="17" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" text="0" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-anuladas-valor" verticalHuggingPriority="251">
+                                                            <rect key="frame" x="0" y="29" width="142.5" height="87" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26" />
+                                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="resumen-anuladas-stack" secondAttribute="bottom" constant="16" id="resumen-anuladas-bottom" />
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="resumen-anuladas-height" />
+                                                <constraint firstItem="resumen-anuladas-stack" firstAttribute="leading" secondItem="resumen-anuladas-card" secondAttribute="leading" constant="16" id="resumen-anuladas-left" />
+                                                <constraint firstAttribute="trailing" secondItem="resumen-anuladas-stack" secondAttribute="trailing" constant="16" id="resumen-anuladas-right" />
+                                                <constraint firstItem="resumen-anuladas-stack" firstAttribute="top" secondItem="resumen-anuladas-card" secondAttribute="top" constant="16" id="resumen-anuladas-top" />
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="16" />
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-card">
+                                            <rect key="frame" x="186.5" y="0" width="174.5" height="148" />
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-stack">
+                                                    <rect key="frame" x="16" y="16" width="142.5" height="116" />
+                                                    <subviews>
+                                                        <label opaque="NO" contentMode="left" text="Ingresos efectivos" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-titulo" verticalHuggingPriority="252">
+                                                            <rect key="frame" x="0" y="0" width="142.5" height="17" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                        <label opaque="NO" contentMode="left" text="S/ 0.00" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resumen-ingresos-valor" verticalHuggingPriority="251">
+                                                            <rect key="frame" x="0" y="29" width="142.5" height="87" />
+                                                            <nil key="highlightedColor" />
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26" />
+                                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="resumen-ingresos-stack" secondAttribute="bottom" constant="16" id="resumen-ingresos-bottom" />
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="148" id="resumen-ingresos-height" />
+                                                <constraint firstItem="resumen-ingresos-stack" firstAttribute="leading" secondItem="resumen-ingresos-card" secondAttribute="leading" constant="16" id="resumen-ingresos-left" />
+                                                <constraint firstAttribute="trailing" secondItem="resumen-ingresos-stack" secondAttribute="trailing" constant="16" id="resumen-ingresos-right" />
+                                                <constraint firstItem="resumen-ingresos-stack" firstAttribute="top" secondItem="resumen-ingresos-card" secondAttribute="top" constant="16" id="resumen-ingresos-top" />
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="16" />
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <color key="backgroundColor" red="0.9294117647" green="0.9529411765" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="resumen-row2-stack" secondAttribute="bottom" constant="8" id="resumen-row2-bottom" />
+                                <constraint firstItem="resumen-row2-stack" firstAttribute="leading" secondItem="resumen-row2-content" secondAttribute="leading" constant="16" id="resumen-row2-left" />
+                                <constraint firstAttribute="trailing" secondItem="resumen-row2-stack" secondAttribute="trailing" constant="16" id="resumen-row2-right" />
+                                <constraint firstItem="resumen-row2-stack" firstAttribute="top" secondItem="resumen-row2-content" secondAttribute="top" constant="8" id="resumen-row2-top" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                    </tableViewCell>
+                </cells>
+            </tableViewSection>
+        </sections>
+        <connections>
+            <outlet property="dataSource" destination="resumen-vc" id="resumen-datasource" />
+            <outlet property="delegate" destination="resumen-vc" id="resumen-delegate" />
+        </connections>
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+    </tableView>
+    <navigationItem key="navigationItem" title="Resumen" id="resumen-navigation" />
+    <userDefinedRuntimeAttributes>
+        <userDefinedRuntimeAttribute type="boolean" keyPath="mostrarResumen" value="YES" />
+    </userDefinedRuntimeAttributes>
+    <connections>
+        <outlet property="anuladasResumenLabel" destination="resumen-anuladas-valor" id="resumen-anuladas-outlet" />
+        <outlet property="clientesResumenLabel" destination="resumen-clientes-valor" id="resumen-clientes-outlet" />
+        <outlet property="efectivasResumenLabel" destination="resumen-efectivas-valor" id="resumen-efectivas-outlet" />
+        <outlet property="ingresosResumenLabel" destination="resumen-ingresos-valor" id="resumen-ingresos-outlet" />
+        <outlet property="productosResumenLabel" destination="resumen-productos-valor" id="resumen-productos-outlet" />
+        <outlet property="registradasResumenLabel" destination="resumen-registradas-valor" id="resumen-registradas-outlet" />
+    </connections>
+</tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="resumen-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3482" y="1294"/>
@@ -1368,114 +1469,145 @@
         <scene sceneID="equipo-scene">
             <objects>
                 <tableViewController storyboardIdentifier="VentasEquipoViewController" id="equipo-vc" customClass="SupervisorViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="150" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="equipo-table">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="equipo-header">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="198"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="150" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="equipo-table">
+        <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <view key="tableHeaderView" contentMode="scaleToFill" id="equipo-header">
+            <rect key="frame" x="0" y="0" width="393" height="238.0" />
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" />
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-filtros">
+                    <rect key="frame" x="16" y="8" width="361" height="222.0" />
+                    <subviews>
+                        <label opaque="NO" contentMode="left" text="VENTAS DEL EQUIPO" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-titulo">
+                            <rect key="frame" x="0" y="0" width="361" height="34" />
+                            <nil key="highlightedColor" />
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        </label>
+                        <searchBar contentMode="redraw" placeholder="Cliente, producto o vendedor" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-buscar" searchBarStyle="minimal">
+                            <rect key="frame" x="0" y="46.0" width="361" height="56" />
+                            <textInputTraits key="textInputTraits" />
+                        </searchBar>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-estado">
+                            <rect key="frame" x="0" y="114.0" width="361" height="40" />
+                            <segments>
+                                <segment title="Todas" />
+                                <segment title="Activas" />
+                                <segment title="Anuladas" />
+                            </segments>
+                            <connections>
+                                <action selector="cambiarEstado:" destination="equipo-vc" eventType="valueChanged" id="equipo-estado-action" />
+                            </connections>
+                            <constraints>
+                                <constraint id="equipo-v5-estado-height" firstItem="equipo-estado" firstAttribute="height" constant="40" />
+                            </constraints>
+                        </segmentedControl>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-vendedor">
+                            <rect key="frame" x="0" y="166.0" width="361" height="56" />
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="equipo-vendedor-height" />
+                            </constraints>
+                            <state key="normal" title="Vendedor: Todos">
+                                <color key="titleColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                            </state>
+                            <fontDescription key="fontDescription" type="system" pointSize="17" />
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="12" />
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <inset key="contentEdgeInsets" minX="16" minY="12" maxX="16" maxY="12" />
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="equipo-filtros" secondAttribute="bottom" constant="8" id="equipo-header-bottom" />
+                <constraint firstItem="equipo-filtros" firstAttribute="leading" secondItem="equipo-header" secondAttribute="leading" constant="16" id="equipo-header-left" />
+                <constraint firstAttribute="trailing" secondItem="equipo-filtros" secondAttribute="trailing" constant="16" id="equipo-header-right" />
+                <constraint firstItem="equipo-filtros" firstAttribute="top" secondItem="equipo-header" secondAttribute="top" constant="8" id="equipo-header-top" />
+            </constraints>
+        </view>
+        <prototypes>
+            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VentaEquipoCell" rowHeight="155.0" id="equipo-cell" customClass="VentaEquipoTableViewCell" customModule="Ventas" customModuleProvider="target">
+                <rect key="frame" x="0" y="238.0" width="393" height="155.0" />
+                <autoresizingMask key="autoresizingMask" />
+                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="equipo-cell" id="equipo-cell-content">
+                    <rect key="frame" x="0" y="0" width="367" height="155.0" />
+                    <autoresizingMask key="autoresizingMask" />
+                    <subviews>
+                        <view id="equipo-v5-card" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO">
+                            <rect key="frame" x="12" y="8" width="343" height="139.0" />
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="12" />
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-filtros">
-                                    <rect key="frame" x="16" y="8" width="361" height="182"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-stack">
+                                    <rect key="frame" x="16" y="16" width="311" height="107.0" />
                                     <subviews>
-                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Ventas del equipo" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-titulo">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="26.333333333333332"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
+                                        <label opaque="NO" contentMode="left" text="Fecha · Estado" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-encabezado" verticalHuggingPriority="252">
+                                            <rect key="frame" x="0" y="0" width="311" height="17" />
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14" />
+                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                         </label>
-                                        <searchBar contentMode="redraw" ambiguous="YES" placeholder="Cliente, producto o vendedor" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-buscar">
-                                            <rect key="frame" x="0.0" y="34.333333333333343" width="361" height="64"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </searchBar>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-estado">
-                                            <rect key="frame" x="0.0" y="106.33333333333333" width="361" height="24.666666666666671"/>
-                                            <segments>
-                                                <segment title="Todas"/>
-                                                <segment title="Activas"/>
-                                                <segment title="Anuladas"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="cambiarEstado:" destination="equipo-vc" eventType="valueChanged" id="equipo-estado-action"/>
-                                            </connections>
-                                        </segmentedControl>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-vendedor">
-                                            <rect key="frame" x="0.0" y="138" width="361" height="44"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="equipo-vendedor-height"/>
-                                            </constraints>
-                                            <state key="normal" title="Vendedor: Todos"/>
-                                        </button>
+                                        <label opaque="NO" contentMode="left" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-informacion" verticalHuggingPriority="251">
+                                            <rect key="frame" x="0" y="27.0" width="311" height="80" />
+                                            <string key="text">Cliente: —
+Producto: —
+Vendedor: —
+Cantidad: — · Total: S/ 0.00</string>
+                                            <nil key="highlightedColor" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="16" />
+                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
                                     </subviews>
                                 </stackView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="equipo-filtros" secondAttribute="bottom" constant="8" id="equipo-header-bottom"/>
-                                <constraint firstItem="equipo-filtros" firstAttribute="leading" secondItem="equipo-header" secondAttribute="leading" constant="16" id="equipo-header-left"/>
-                                <constraint firstAttribute="trailing" secondItem="equipo-filtros" secondAttribute="trailing" constant="16" id="equipo-header-right"/>
-                                <constraint firstItem="equipo-filtros" firstAttribute="top" secondItem="equipo-header" secondAttribute="top" constant="8" id="equipo-header-top"/>
+                                <constraint id="equipo-v5-card-content-top" firstItem="equipo-cell-stack" firstAttribute="top" secondItem="equipo-v5-card" secondAttribute="top" constant="16" />
+                                <constraint id="equipo-v5-card-content-left" firstItem="equipo-cell-stack" firstAttribute="leading" secondItem="equipo-v5-card" secondAttribute="leading" constant="16" />
+                                <constraint id="equipo-v5-card-content-right" firstItem="equipo-v5-card" firstAttribute="trailing" secondItem="equipo-cell-stack" secondAttribute="trailing" constant="16" />
+                                <constraint id="equipo-v5-card-content-bottom" firstItem="equipo-v5-card" firstAttribute="bottom" secondItem="equipo-cell-stack" secondAttribute="bottom" constant="16" />
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VentaEquipoCell" rowHeight="160" id="equipo-cell" customClass="VentaEquipoTableViewCell" customModule="Ventas" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="248" width="393" height="160"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="equipo-cell" id="equipo-cell-content">
-                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="160"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-stack">
-                                            <rect key="frame" x="16" y="12" width="330.66666666666669" height="136"/>
-                                            <subviews>
-                                                <label opaque="NO" contentMode="left" ambiguous="YES" text="Fecha · Estado" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-encabezado">
-                                                    <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="56.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" contentMode="left" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-informacion">
-                                                    <rect key="frame" x="0.0" y="64.333333333333314" width="330.66666666666669" height="71.666666666666686"/>
-                                                    <string key="text">Cliente: —
-Producto: —
-Vendedor: —
-Cantidad: — · Total: S/ 0.00</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="equipo-cell-stack" secondAttribute="bottom" constant="12" id="equipo-cell-bottom"/>
-                                        <constraint firstItem="equipo-cell-stack" firstAttribute="leading" secondItem="equipo-cell-content" secondAttribute="leading" constant="16" id="equipo-cell-left"/>
-                                        <constraint firstAttribute="trailing" secondItem="equipo-cell-stack" secondAttribute="trailing" constant="16" id="equipo-cell-right"/>
-                                        <constraint firstItem="equipo-cell-stack" firstAttribute="top" secondItem="equipo-cell-content" secondAttribute="top" constant="12" id="equipo-cell-top"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="encabezadoLabel" destination="equipo-cell-encabezado" id="equipo-cell-encabezado-outlet"/>
-                                    <outlet property="informacionLabel" destination="equipo-cell-informacion" id="equipo-cell-informacion-outlet"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="equipo-vc" id="equipo-datasource"/>
-                            <outlet property="delegate" destination="equipo-vc" id="equipo-delegate"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Ventas del equipo" id="equipo-navigation"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="mostrarResumen" value="NO"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="buscarSearchBar" destination="equipo-buscar" id="equipo-buscar-outlet"/>
-                        <outlet property="estadoSegmented" destination="equipo-estado" id="equipo-estado-outlet"/>
-                        <outlet property="filtrosStack" destination="equipo-filtros" id="equipo-filtros-outlet"/>
-                        <outlet property="vendedorButton" destination="equipo-vendedor" id="equipo-vendedor-outlet"/>
-                    </connections>
-                </tableViewController>
+                    </subviews>
+                    <constraints>
+                        <constraint id="equipo-v5-card-top" firstItem="equipo-v5-card" firstAttribute="top" secondItem="equipo-cell-content" secondAttribute="top" constant="8" />
+                        <constraint id="equipo-v5-card-left" firstItem="equipo-v5-card" firstAttribute="leading" secondItem="equipo-cell-content" secondAttribute="leading" constant="12" />
+                        <constraint id="equipo-v5-card-right" firstItem="equipo-cell-content" firstAttribute="trailing" secondItem="equipo-v5-card" secondAttribute="trailing" constant="12" />
+                        <constraint id="equipo-v5-card-bottom" firstItem="equipo-cell-content" firstAttribute="bottom" secondItem="equipo-v5-card" secondAttribute="bottom" constant="8" />
+                    </constraints>
+                </tableViewCellContentView>
+                <connections>
+                    <outlet property="encabezadoLabel" destination="equipo-cell-encabezado" id="equipo-cell-encabezado-outlet" />
+                    <outlet property="informacionLabel" destination="equipo-cell-informacion" id="equipo-cell-informacion-outlet" />
+                </connections>
+                <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+            </tableViewCell>
+        </prototypes>
+        <connections>
+            <outlet property="dataSource" destination="equipo-vc" id="equipo-datasource" />
+            <outlet property="delegate" destination="equipo-vc" id="equipo-delegate" />
+        </connections>
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+    </tableView>
+    <navigationItem key="navigationItem" title="Ventas del equipo" id="equipo-navigation" />
+    <userDefinedRuntimeAttributes>
+        <userDefinedRuntimeAttribute type="boolean" keyPath="mostrarResumen" value="NO" />
+    </userDefinedRuntimeAttributes>
+    <connections>
+        <outlet property="buscarSearchBar" destination="equipo-buscar" id="equipo-buscar-outlet" />
+        <outlet property="estadoSegmented" destination="equipo-estado" id="equipo-estado-outlet" />
+        <outlet property="filtrosStack" destination="equipo-filtros" id="equipo-filtros-outlet" />
+        <outlet property="vendedorButton" destination="equipo-vendedor" id="equipo-vendedor-outlet" />
+    </connections>
+</tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="equipo-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2428" y="1294"/>
