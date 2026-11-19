@@ -6,6 +6,8 @@ final class MisVentasViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var estadoSegmentedControl: UISegmentedControl!
     @IBOutlet weak var ventasTableView: UITableView!
     @IBOutlet weak var estadoVacioLabel: UILabel!
+    @IBOutlet private weak var ventasHeaderStack: UIStackView!
+    @IBOutlet private weak var ventasBottomConstraint: NSLayoutConstraint!
 
     var usuarioSesion: Usuario? {
         didSet { if isViewLoaded { cargarVentas() } }
@@ -27,8 +29,10 @@ final class MisVentasViewController: UIViewController, UITableViewDataSource, UI
         ventasTableView.dataSource = self
         ventasTableView.delegate = self
         ventasTableView.rowHeight = UITableView.automaticDimension
-        ventasTableView.estimatedRowHeight = 100
+        ventasTableView.estimatedRowHeight = 160
         ventasTableView.keyboardDismissMode = .onDrag
+        ventasBottomConstraint.isActive = false
+        ventasTableView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
         buscarSearchBar.delegate = self
     }
 
@@ -38,12 +42,28 @@ final class MisVentasViewController: UIViewController, UITableViewDataSource, UI
         cargarVentas()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let cabecera = ventasTableView.tableHeaderView else { return }
+        let ancho = ventasTableView.bounds.width
+        let ajuste = ventasHeaderStack.systemLayoutSizeFitting(
+            CGSize(width: max(0, ancho - 40), height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+        let alto = ceil(ajuste.height + 24)
+        if cabecera.frame.width != ancho || abs(cabecera.frame.height - alto) > 0.5 {
+            cabecera.frame.size = CGSize(width: ancho, height: alto)
+            ventasTableView.tableHeaderView = cabecera
+        }
+    }
+
     @IBAction func filtrarEstado(_ sender: UISegmentedControl) { cargarVentas() }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) { cargarVentas() }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { searchBar.resignFirstResponder() }
 
     private func cargarVentas() {
         guard contexto != nil else { return }
+        // Ajusta la cabecera al mostrar u ocultar el mensaje vacío, sin repetir consultas.
+        view.setNeedsLayout()
         // Sin usuario persistido no se hace ninguna consulta de ventas.
         guard let usuario = usuarioSesion, usuario.rol == "Vendedor", !usuario.isDeleted,
               usuario.managedObjectContext != nil, !usuario.objectID.isTemporaryID else {
@@ -87,14 +107,14 @@ final class MisVentasViewController: UIViewController, UITableViewDataSource, UI
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { ventas.count }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "VentaCell")
-            ?? UITableViewCell(style: .subtitle, reuseIdentifier: "VentaCell")
+        let celda = tableView.dequeueReusableCell(withIdentifier: "VentaCell", for: indexPath) as! MisVentaTableViewCell
         let venta = ventas[indexPath.row]
-        celda.textLabel?.numberOfLines = 0
-        celda.detailTextLabel?.numberOfLines = 0
-        celda.textLabel?.text = "\(fecha(venta)) · \(venta.anulada ? "Anulada" : "Activa")"
-        celda.detailTextLabel?.text = "Cliente: \(venta.cliente?.nombre ?? "Sin cliente")\nProducto: \(venta.producto?.nombre ?? "Sin producto")\nCantidad: \(venta.cantidad) · Total: \(importe(venta.total))"
-        celda.accessoryType = .disclosureIndicator
+        celda.fechaLabel.text = fecha(venta)
+        celda.estadoLabel.text = venta.anulada ? "Anulada" : "Activa"
+        celda.clienteLabel.text = "Cliente: \(venta.cliente?.nombre ?? "Sin cliente")"
+        celda.productoLabel.text = "Producto: \(venta.producto?.nombre ?? "Sin producto")"
+        celda.cantidadLabel.text = "Cantidad: \(venta.cantidad)"
+        celda.totalLabel.text = "Total: S/ \(importe(venta.total))"
         return celda
     }
 

@@ -7,6 +7,8 @@ final class ClientesViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var guardarButton: UIButton!
     @IBOutlet weak var buscarSearchBar: UISearchBar!
     @IBOutlet weak var clientesTableView: UITableView!
+    @IBOutlet private weak var clientesHeaderStack: UIStackView!
+    @IBOutlet private weak var clientesBottomConstraint: NSLayoutConstraint!
 
     var usuarioSesion: Usuario? {
         didSet { if isViewLoaded { actualizarPermisos(); cargarClientes() } }
@@ -35,6 +37,10 @@ final class ClientesViewController: UIViewController, UITableViewDataSource, UIT
         clientesTableView.dataSource = self
         clientesTableView.delegate = self
         clientesTableView.keyboardDismissMode = .onDrag
+        clientesTableView.rowHeight = UITableView.automaticDimension
+        clientesTableView.estimatedRowHeight = 100
+        clientesBottomConstraint.isActive = false
+        clientesTableView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
         buscarSearchBar.delegate = self
         actualizarPermisos()
     }
@@ -44,6 +50,20 @@ final class ClientesViewController: UIViewController, UITableViewDataSource, UIT
         contexto.refreshAllObjects()
         actualizarPermisos()
         cargarClientes()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let cabecera = clientesTableView.tableHeaderView else { return }
+        let ancho = clientesTableView.bounds.width
+        let ajuste = clientesHeaderStack.systemLayoutSizeFitting(
+            CGSize(width: max(0, ancho - 40), height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+        let alto = ceil(ajuste.height + 24)
+        if cabecera.frame.width != ancho || abs(cabecera.frame.height - alto) > 0.5 {
+            cabecera.frame.size = CGSize(width: ancho, height: alto)
+            clientesTableView.tableHeaderView = cabecera
+        }
     }
 
     private func actualizarPermisos() {
@@ -126,11 +146,10 @@ final class ClientesViewController: UIViewController, UITableViewDataSource, UIT
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { searchBar.resignFirstResponder() }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { clientes.count }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "ClienteCell")
-            ?? UITableViewCell(style: .subtitle, reuseIdentifier: "ClienteCell")
+        let celda = tableView.dequeueReusableCell(withIdentifier: "ClienteCell", for: indexPath) as! ClienteTableViewCell
         let cliente = clientes[indexPath.row]
-        celda.textLabel?.text = cliente.nombre
-        celda.detailTextLabel?.text = "Documento: \(cliente.documento ?? "")"
+        celda.nombreLabel.text = cliente.nombre
+        celda.documentoLabel.text = "Documento: \(cliente.documento ?? "")"
         celda.selectionStyle = puedeGestionar ? .default : .none
         return celda
     }

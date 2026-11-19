@@ -393,76 +393,139 @@
         <scene sceneID="a4-scene">
             <objects>
                 <viewController storyboardIdentifier="ClientesViewController" id="a4-vc" customClass="ClientesViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a4-view">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a4-stack">
-                                <rect key="frame" x="20" y="75.000000000000014" width="353" height="236.33333333333337"/>
-                                <subviews>
-                                    <label opaque="NO" contentMode="left" text="CLIENTES" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a4-title">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" translatesAutoresizingMaskIntoConstraints="NO" id="a4-nombre">
-                                        <rect key="frame" x="0.0" y="28.333333333333329" width="353" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="a4-nombre-height"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Documento" translatesAutoresizingMaskIntoConstraints="NO" id="a4-documento">
-                                        <rect key="frame" x="0.0" y="76.333333333333343" width="353" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="a4-documento-height"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4-guardar">
-                                        <rect key="frame" x="0.0" y="124.33333333333334" width="353" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="a4-guardar-height"/>
-                                        </constraints>
-                                        <state key="normal" title="Guardar cliente"/>
-                                        <connections>
-                                            <action selector="guardarCliente:" destination="a4-vc" eventType="touchUpInside" id="Xrq-BD-SFp"/>
-                                        </connections>
-                                    </button>
-                                    <searchBar contentMode="redraw" placeholder="Buscar por nombre o documento" translatesAutoresizingMaskIntoConstraints="NO" id="a4-buscar">
-                                        <rect key="frame" x="0.0" y="172.33333333333334" width="353" height="64"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                </subviews>
-                            </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a4-tabla">
-                                <rect key="frame" x="20" y="323.33333333333326" width="353" height="478.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="a4-safe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="a4-safe" firstAttribute="bottom" secondItem="a4-tabla" secondAttribute="bottom" constant="16" id="a4-bottom"/>
-                            <constraint firstItem="a4-stack" firstAttribute="leading" secondItem="a4-safe" secondAttribute="leading" constant="20" id="a4-left"/>
-                            <constraint firstItem="a4-safe" firstAttribute="trailing" secondItem="a4-stack" secondAttribute="trailing" constant="20" id="a4-right"/>
-                            <constraint firstItem="a4-tabla" firstAttribute="leading" secondItem="a4-stack" secondAttribute="leading" id="a4-tableleft"/>
-                            <constraint firstItem="a4-tabla" firstAttribute="trailing" secondItem="a4-stack" secondAttribute="trailing" id="a4-tableright"/>
-                            <constraint firstItem="a4-tabla" firstAttribute="top" secondItem="a4-stack" secondAttribute="bottom" constant="12" id="a4-tabletop"/>
-                            <constraint firstItem="a4-stack" firstAttribute="top" secondItem="a4-safe" secondAttribute="top" constant="16" id="a4-top"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="buscarSearchBar" destination="a4-buscar" id="w1e-pE-qsx"/>
-                        <outlet property="clientesTableView" destination="a4-tabla" id="Sfz-00-NW6"/>
-                        <outlet property="documentoTextField" destination="a4-documento" id="oO3-GO-BN5"/>
-                        <outlet property="guardarButton" destination="a4-guardar" id="AEy-g8-PbW"/>
-                        <outlet property="nombreTextField" destination="a4-nombre" id="EsC-9T-LEB"/>
-                    </connections>
-                </viewController>
+    <view key="view" id="a4-view" contentMode="scaleToFill">
+        <rect key="frame" x="0" y="0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <subviews>
+            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a4-tabla" keyboardDismissMode="onDrag">
+                <rect key="frame" x="0" y="103" width="393" height="681" />
+                <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                <view key="tableHeaderView" id="clientes-header" contentMode="scaleToFill">
+                    <rect key="frame" x="0" y="0" width="393" height="314.0" />
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" />
+                    <subviews>
+                        <stackView id="clientes-header-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO">
+                            <rect key="frame" x="20" y="16" width="353" height="290.0" />
+                            <subviews>
+                                <label id="a4-title" opaque="NO" contentMode="left" text="CLIENTES" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="0" width="353" height="34" />
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                                    <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                </label>
+                                <stackView id="clientes-fields-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="46.0" width="353" height="112.0" />
+                                    <subviews>
+                                        <textField id="a4-nombre" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="0" width="353" height="50" />
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                            <constraints>
+                                                <constraint id="a4-nombre-v3-height" firstItem="a4-nombre" firstAttribute="height" constant="50" />
+                                            </constraints>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="name" />
+                                        </textField>
+                                        <textField id="a4-documento" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Documento" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="62.0" width="353" height="50" />
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                            <constraints>
+                                                <constraint id="a4-documento-v3-height" firstItem="a4-documento" firstAttribute="height" constant="50" />
+                                            </constraints>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" />
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <button id="a4-guardar" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="170.0" width="353" height="52" />
+                                    <color key="backgroundColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17" />
+                                    <constraints>
+                                        <constraint id="clientes-guardar-v3-height" firstItem="a4-guardar" firstAttribute="height" constant="52" />
+                                    </constraints>
+                                    <state key="normal" title="Guardar cliente">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <real key="value" value="12" />
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="guardarCliente:" destination="a4-vc" eventType="touchUpInside" id="Xrq-BD-SFp" />
+                                    </connections>
+                                </button>
+                                <searchBar contentMode="redraw" placeholder="Buscar por nombre o documento" translatesAutoresizingMaskIntoConstraints="NO" id="a4-buscar" searchBarStyle="minimal">
+                                    <rect key="frame" x="0" y="234.0" width="353" height="56" />
+                                    <textInputTraits key="textInputTraits" />
+                                </searchBar>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint id="clientes-header-top" firstItem="clientes-header-stack" firstAttribute="top" secondItem="clientes-header" secondAttribute="top" constant="16" />
+                        <constraint id="clientes-header-left" firstItem="clientes-header-stack" firstAttribute="leading" secondItem="clientes-header" secondAttribute="leading" constant="20" />
+                        <constraint id="clientes-header-right" firstItem="clientes-header" firstAttribute="trailing" secondItem="clientes-header-stack" secondAttribute="trailing" constant="20" />
+                        <constraint id="clientes-header-bottom" firstItem="clientes-header" firstAttribute="bottom" secondItem="clientes-header-stack" secondAttribute="bottom" constant="8" />
+                    </constraints>
+                </view>
+                <prototypes>
+                    <tableViewCell id="cliente-cell" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" reuseIdentifier="ClienteCell" customClass="ClienteTableViewCell" customModule="Ventas" customModuleProvider="target" rowHeight="72.0">
+                        <rect key="frame" x="0" y="314.0" width="393" height="72.0" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" id="cliente-content" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cliente-cell">
+                            <rect key="frame" x="0" y="0" width="367" height="72.0" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView id="cliente-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="16" y="12" width="335" height="48.0" />
+                                    <subviews>
+                                        <label id="cliente-nombre" opaque="NO" contentMode="left" text="Nombre completo" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="0" width="335" height="22" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18" />
+                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <label id="cliente-documento" opaque="NO" contentMode="left" text="Documento: —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="30.0" width="335" height="18" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint id="cliente-top" firstItem="cliente-stack" firstAttribute="top" secondItem="cliente-content" secondAttribute="top" constant="12" />
+                                <constraint id="cliente-left" firstItem="cliente-stack" firstAttribute="leading" secondItem="cliente-content" secondAttribute="leading" constant="16" />
+                                <constraint id="cliente-right" firstItem="cliente-content" firstAttribute="trailing" secondItem="cliente-stack" secondAttribute="trailing" constant="16" />
+                                <constraint id="cliente-bottom" firstItem="cliente-content" firstAttribute="bottom" secondItem="cliente-stack" secondAttribute="bottom" constant="12" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <connections>
+                            <outlet property="nombreLabel" destination="cliente-nombre" id="cliente-nombreLabel-wire" />
+                            <outlet property="documentoLabel" destination="cliente-documento" id="cliente-documentoLabel-wire" />
+                        </connections>
+                    </tableViewCell>
+                </prototypes>
+            </tableView>
+        </subviews>
+        <viewLayoutGuide key="safeArea" id="a4-safe" />
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        <constraints>
+            <constraint id="clientes-table-top" firstItem="a4-tabla" firstAttribute="top" secondItem="a4-safe" secondAttribute="top" />
+            <constraint id="clientes-table-leading" firstItem="a4-tabla" firstAttribute="leading" secondItem="a4-safe" secondAttribute="leading" />
+            <constraint id="clientes-table-trailing" firstItem="a4-tabla" firstAttribute="trailing" secondItem="a4-safe" secondAttribute="trailing" />
+            <constraint id="clientes-table-bottom" firstItem="a4-tabla" firstAttribute="bottom" secondItem="a4-safe" secondAttribute="bottom" />
+        </constraints>
+    </view>
+    <connections>
+        <outlet property="buscarSearchBar" destination="a4-buscar" id="w1e-pE-qsx" />
+        <outlet property="clientesTableView" destination="a4-tabla" id="Sfz-00-NW6" />
+        <outlet property="documentoTextField" destination="a4-documento" id="oO3-GO-BN5" />
+        <outlet property="guardarButton" destination="a4-guardar" id="AEy-g8-PbW" />
+        <outlet property="nombreTextField" destination="a4-nombre" id="EsC-9T-LEB" />
+        <outlet property="clientesHeaderStack" destination="clientes-header-stack" id="clientes-clientesHeaderStack-wire" />
+        <outlet property="clientesBottomConstraint" destination="clientes-table-bottom" id="clientes-clientesBottomConstraint-wire" />
+    </connections>
+</viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-410" y="1294"/>
@@ -602,66 +665,149 @@
         <scene sceneID="a6-scene">
             <objects>
                 <viewController storyboardIdentifier="MisVentasViewController" id="a6-vc" customClass="MisVentasViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a6-view">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a6-stack">
-                                <rect key="frame" x="20" y="74.999999999999986" width="353" height="159.66666666666663"/>
-                                <subviews>
-                                    <label opaque="NO" contentMode="left" text="MIS VENTAS" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a6-title">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <searchBar contentMode="redraw" placeholder="Buscar por cliente o producto" translatesAutoresizingMaskIntoConstraints="NO" id="a6-buscar">
-                                        <rect key="frame" x="0.0" y="28.333333333333329" width="353" height="64"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="a6-filtro">
-                                        <rect key="frame" x="0.0" y="100.33333333333334" width="353" height="32"/>
-                                        <segments>
-                                            <segment title="Todas"/>
-                                            <segment title="Activas"/>
-                                            <segment title="Anuladas"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="filtrarEstado:" destination="a6-vc" eventType="valueChanged" id="menu-action-a6-filtro"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <label opaque="NO" contentMode="left" text="No hay ventas para mostrar." lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a6-vacio">
-                                        <rect key="frame" x="0.0" y="139.33333333333334" width="353" height="20.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a6-tabla">
-                                <rect key="frame" x="20" y="246.66666666666669" width="353" height="555.33333333333326"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="a6-safe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="a6-safe" firstAttribute="bottom" secondItem="a6-tabla" secondAttribute="bottom" constant="16" id="a6-bottom"/>
-                            <constraint firstItem="a6-stack" firstAttribute="leading" secondItem="a6-safe" secondAttribute="leading" constant="20" id="a6-left"/>
-                            <constraint firstItem="a6-safe" firstAttribute="trailing" secondItem="a6-stack" secondAttribute="trailing" constant="20" id="a6-right"/>
-                            <constraint firstItem="a6-tabla" firstAttribute="leading" secondItem="a6-stack" secondAttribute="leading" id="a6-tableleft"/>
-                            <constraint firstItem="a6-tabla" firstAttribute="trailing" secondItem="a6-stack" secondAttribute="trailing" id="a6-tableright"/>
-                            <constraint firstItem="a6-tabla" firstAttribute="top" secondItem="a6-stack" secondAttribute="bottom" constant="12" id="a6-tabletop"/>
-                            <constraint firstItem="a6-stack" firstAttribute="top" secondItem="a6-safe" secondAttribute="top" constant="16" id="a6-top"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="buscarSearchBar" destination="a6-buscar" id="menu-wire-a6-buscar"/>
-                        <outlet property="estadoSegmentedControl" destination="a6-filtro" id="menu-wire-a6-filtro"/>
-                        <outlet property="estadoVacioLabel" destination="a6-vacio" id="menu-wire-a6-vacio"/>
-                        <outlet property="ventasTableView" destination="a6-tabla" id="menu-wire-a6-tabla"/>
-                    </connections>
-                </viewController>
+    <view key="view" id="a6-view" contentMode="scaleToFill">
+        <rect key="frame" x="0" y="0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <subviews>
+            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="160" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a6-tabla" keyboardDismissMode="onDrag">
+                <rect key="frame" x="0" y="103" width="393" height="681" />
+                <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                <view key="tableHeaderView" id="misventas-header" contentMode="scaleToFill">
+                    <rect key="frame" x="0" y="0" width="393" height="208.0" />
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" />
+                    <subviews>
+                        <stackView id="misventas-header-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO">
+                            <rect key="frame" x="20" y="16" width="353" height="184.0" />
+                            <subviews>
+                                <label id="a6-title" opaque="NO" contentMode="left" text="MIS VENTAS" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="0" width="353" height="34" />
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                                    <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                </label>
+                                <searchBar contentMode="redraw" placeholder="Buscar por cliente o producto" translatesAutoresizingMaskIntoConstraints="NO" id="a6-buscar" searchBarStyle="minimal">
+                                    <rect key="frame" x="0" y="46.0" width="353" height="56" />
+                                    <textInputTraits key="textInputTraits" />
+                                </searchBar>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="a6-filtro">
+                                    <rect key="frame" x="0" y="114.0" width="353" height="40" />
+                                    <segments>
+                                        <segment title="Todas" />
+                                        <segment title="Activas" />
+                                        <segment title="Anuladas" />
+                                    </segments>
+                                    <connections>
+                                        <action selector="filtrarEstado:" destination="a6-vc" eventType="valueChanged" id="menu-action-a6-filtro" />
+                                    </connections>
+                                    <constraints>
+                                        <constraint id="misventas-filtro-height" firstItem="a6-filtro" firstAttribute="height" constant="40" />
+                                    </constraints>
+                                </segmentedControl>
+                                <label id="a6-vacio" opaque="NO" contentMode="left" text="No hay ventas para mostrar." numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                    <rect key="frame" x="0" y="166.0" width="353" height="18" />
+                                    <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                    <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint id="misventas-header-top" firstItem="misventas-header-stack" firstAttribute="top" secondItem="misventas-header" secondAttribute="top" constant="16" />
+                        <constraint id="misventas-header-left" firstItem="misventas-header-stack" firstAttribute="leading" secondItem="misventas-header" secondAttribute="leading" constant="20" />
+                        <constraint id="misventas-header-right" firstItem="misventas-header" firstAttribute="trailing" secondItem="misventas-header-stack" secondAttribute="trailing" constant="20" />
+                        <constraint id="misventas-header-bottom" firstItem="misventas-header" firstAttribute="bottom" secondItem="misventas-header-stack" secondAttribute="bottom" constant="8" />
+                    </constraints>
+                </view>
+                <prototypes>
+                    <tableViewCell id="misventa-cell" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" reuseIdentifier="VentaCell" customClass="MisVentaTableViewCell" customModule="Ventas" customModuleProvider="target" rowHeight="125.0">
+                        <rect key="frame" x="0" y="208.0" width="393" height="125.0" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" id="misventa-content" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="misventa-cell">
+                            <rect key="frame" x="0" y="0" width="367" height="125.0" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView id="misventa-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="16" y="12" width="335" height="101.0" />
+                                    <subviews>
+                                        <stackView id="misventa-heading" opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually">
+                                            <rect key="frame" x="0" y="0" width="335" height="17" />
+                                            <subviews>
+                                                <label id="misventa-fecha" opaque="NO" contentMode="left" text="Fecha y hora" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="0" y="0" width="161.5" height="17" />
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                    <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </label>
+                                                <label id="misventa-estado" opaque="NO" contentMode="left" text="Activa" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="173.5" y="0" width="161.5" height="17" />
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14" />
+                                                    <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label id="misventa-cliente" opaque="NO" contentMode="left" text="Cliente: —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="25.0" width="335" height="22" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18" />
+                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <label id="misventa-producto" opaque="NO" contentMode="left" text="Producto: —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="55.0" width="335" height="18" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <stackView id="misventa-footer" opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually">
+                                            <rect key="frame" x="0" y="81.0" width="335" height="20" />
+                                            <subviews>
+                                                <label id="misventa-cantidad" opaque="NO" contentMode="left" text="Cantidad: —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="0" y="0" width="161.5" height="17" />
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                                    <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </label>
+                                                <label id="misventa-total" opaque="NO" contentMode="left" text="Total: S/ 0.00" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="173.5" y="0" width="161.5" height="20" />
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16" />
+                                                    <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint id="misventa-top" firstItem="misventa-stack" firstAttribute="top" secondItem="misventa-content" secondAttribute="top" constant="12" />
+                                <constraint id="misventa-left" firstItem="misventa-stack" firstAttribute="leading" secondItem="misventa-content" secondAttribute="leading" constant="16" />
+                                <constraint id="misventa-right" firstItem="misventa-content" firstAttribute="trailing" secondItem="misventa-stack" secondAttribute="trailing" constant="16" />
+                                <constraint id="misventa-bottom" firstItem="misventa-content" firstAttribute="bottom" secondItem="misventa-stack" secondAttribute="bottom" constant="12" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <connections>
+                            <outlet property="fechaLabel" destination="misventa-fecha" id="misventa-fechaLabel-wire" />
+                            <outlet property="estadoLabel" destination="misventa-estado" id="misventa-estadoLabel-wire" />
+                            <outlet property="clienteLabel" destination="misventa-cliente" id="misventa-clienteLabel-wire" />
+                            <outlet property="productoLabel" destination="misventa-producto" id="misventa-productoLabel-wire" />
+                            <outlet property="cantidadLabel" destination="misventa-cantidad" id="misventa-cantidadLabel-wire" />
+                            <outlet property="totalLabel" destination="misventa-total" id="misventa-totalLabel-wire" />
+                        </connections>
+                    </tableViewCell>
+                </prototypes>
+            </tableView>
+        </subviews>
+        <viewLayoutGuide key="safeArea" id="a6-safe" />
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        <constraints>
+            <constraint id="misventas-table-top" firstItem="a6-tabla" firstAttribute="top" secondItem="a6-safe" secondAttribute="top" />
+            <constraint id="misventas-table-leading" firstItem="a6-tabla" firstAttribute="leading" secondItem="a6-safe" secondAttribute="leading" />
+            <constraint id="misventas-table-trailing" firstItem="a6-tabla" firstAttribute="trailing" secondItem="a6-safe" secondAttribute="trailing" />
+            <constraint id="misventas-table-bottom" firstItem="a6-tabla" firstAttribute="bottom" secondItem="a6-safe" secondAttribute="bottom" />
+        </constraints>
+    </view>
+    <connections>
+        <outlet property="buscarSearchBar" destination="a6-buscar" id="menu-wire-a6-buscar" />
+        <outlet property="estadoSegmentedControl" destination="a6-filtro" id="menu-wire-a6-filtro" />
+        <outlet property="estadoVacioLabel" destination="a6-vacio" id="menu-wire-a6-vacio" />
+        <outlet property="ventasTableView" destination="a6-tabla" id="menu-wire-a6-tabla" />
+        <outlet property="ventasHeaderStack" destination="misventas-header-stack" id="misventas-ventasHeaderStack-wire" />
+        <outlet property="ventasBottomConstraint" destination="misventas-table-bottom" id="misventas-ventasBottomConstraint-wire" />
+    </connections>
+</viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1440" y="1294"/>
