@@ -14,7 +14,14 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
             cargar()
         }
     }
-    var mostrarResumen = false
+    @IBInspectable var mostrarResumen = false
+    // Solo la escena Resumen conecta estas etiquetas; Ventas no las necesita.
+    @IBOutlet private weak var productosResumenLabel: UILabel?
+    @IBOutlet private weak var clientesResumenLabel: UILabel?
+    @IBOutlet private weak var registradasResumenLabel: UILabel?
+    @IBOutlet private weak var efectivasResumenLabel: UILabel?
+    @IBOutlet private weak var anuladasResumenLabel: UILabel?
+    @IBOutlet private weak var ingresosResumenLabel: UILabel?
     private var contexto: NSManagedObjectContext!
     private var ventas: [Venta] = []
     private var resumen: [(String, String)] = []
@@ -191,6 +198,13 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         etiqueta.textAlignment = .center
         etiqueta.numberOfLines = 0
         tableView.backgroundView = texto == nil ? nil : etiqueta
+        if mostrarResumen {
+            let etiquetas = [productosResumenLabel, clientesResumenLabel, registradasResumenLabel,
+                             efectivasResumenLabel, anuladasResumenLabel, ingresosResumenLabel]
+            for (indice, valor) in etiquetas.enumerated() {
+                valor?.text = resumen.indices.contains(indice) ? resumen[indice].1 : "—"
+            }
+        }
         tableView.reloadData()
     }
     private func nombreVendedor(_ usuario: Usuario?) -> String {
@@ -203,24 +217,26 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
     private func importe(_ valor: Double) -> String { String(format: "S/ %.2f", valor) }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        mostrarResumen ? resumen.count : ventas.count
+        if mostrarResumen {
+            return autorizado && !resumen.isEmpty ? super.tableView(tableView, numberOfRowsInSection: section) : 0
+        }
+        return ventas.count
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
     }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { false }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if mostrarResumen { return super.tableView(tableView, cellForRowAt: indexPath) }
         let celda = tableView.dequeueReusableCell(withIdentifier: "VentaEquipoCell")
             ?? UITableViewCell(style: .subtitle, reuseIdentifier: "VentaEquipoCell")
         celda.selectionStyle = mostrarResumen ? .none : .default
         celda.accessoryType = mostrarResumen ? .none : .disclosureIndicator
         celda.textLabel?.numberOfLines = 0
         celda.detailTextLabel?.numberOfLines = 0
-        if mostrarResumen {
-            celda.textLabel?.text = resumen[indexPath.row].0
-            celda.detailTextLabel?.text = resumen[indexPath.row].1
-        } else {
-            let venta = ventas[indexPath.row]
-            celda.textLabel?.text = "\(fechaVenta(venta)) · \(venta.anulada ? "Anulada" : "Activa")"
-            celda.detailTextLabel?.text = "Cliente: \(venta.cliente?.nombre ?? "Sin cliente")\nProducto: \(venta.producto?.nombre ?? "Sin producto")\nVendedor: \(nombreVendedor(venta.vendedor))\nCantidad: \(venta.cantidad) · Total: \(importe(venta.total))"
-        }
+        let venta = ventas[indexPath.row]
+        celda.textLabel?.text = "\(fechaVenta(venta)) · \(venta.anulada ? "Anulada" : "Activa")"
+        celda.detailTextLabel?.text = "Cliente: \(venta.cliente?.nombre ?? "Sin cliente")\nProducto: \(venta.producto?.nombre ?? "Sin producto")\nVendedor: \(nombreVendedor(venta.vendedor))\nCantidad: \(venta.cantidad) · Total: \(importe(venta.total))"
         return celda
     }
 

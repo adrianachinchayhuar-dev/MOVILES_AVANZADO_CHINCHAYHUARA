@@ -42,7 +42,12 @@ final class MenuPrincipalViewController: UITabBarController {
                 pantalla("MisVentasViewController", "Mis ventas", "list.bullet"), navegacionCuenta]
         } else {
             func supervisor(_ resumen: Bool) -> UINavigationController {
-                let destino = SupervisorViewController(style: .insetGrouped)
+                let destino: SupervisorViewController
+                if resumen {
+                    destino = storyboard.instantiateViewController(withIdentifier: "ResumenSupervisorViewController") as! SupervisorViewController
+                } else {
+                    destino = SupervisorViewController(style: .insetGrouped)
+                }
                 destino.usuarioSesion = usuario
                 destino.mostrarResumen = resumen
                 let navegacion = UINavigationController(rootViewController: destino)
