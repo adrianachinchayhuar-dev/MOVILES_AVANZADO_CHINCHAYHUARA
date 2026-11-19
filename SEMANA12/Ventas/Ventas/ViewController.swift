@@ -13,12 +13,17 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var usuarioTextField: UITextField!
     @IBOutlet weak var claveTextField: UITextField!
+    @IBOutlet private weak var loginScrollView: UIScrollView!
+    @IBOutlet private weak var loginScrollBottomConstraint: NSLayoutConstraint!
 
     private var iniciandoSesion = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         claveTextField.isSecureTextEntry = true
+        // Interface Builder define la distribución; esta guía adapta el área al teclado.
+        loginScrollBottomConstraint.isActive = false
+        loginScrollView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
     }
 
     override func viewWillAppear(_ animated: Bool) {

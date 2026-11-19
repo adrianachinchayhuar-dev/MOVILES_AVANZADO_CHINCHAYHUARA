@@ -13,220 +13,363 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VENTAS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4y-vF-eRu">
-                                <rect key="frame" x="164" y="140" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Iniciar Sesión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWo-lr-NwY">
-                                <rect key="frame" x="146" y="197" width="101" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-kG-aIv">
-                                <rect key="frame" x="148" y="272" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-66-A8F">
-                                <rect key="frame" x="148" y="341" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TW0-eb-xKG">
-                                <rect key="frame" x="147" y="459" width="87" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Ingresar"/>
-                                <connections>
-                                    <action selector="ingresar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PI5-FQ-7Nr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIV-8c-gI3">
-                                <rect key="frame" x="134" y="532" width="125" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Crear Cuenta"/>
-                                <connections>
-                                    <segue destination="xW7-jX-S2l" kind="show" id="4YV-K2-I9r"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
+<rect key="frame" x="0" y="0" width="393" height="852"/><autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews><scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="login-scroll">
+<rect key="frame" x="0" y="59" width="393" height="759"/><subviews><stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="login-main-stack"><rect key="frame" x="24" y="48" width="345" height="387"/><subviews><stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="login-header-stack"><rect key="frame" x="0" y="0" width="345" height="95"/><subviews>
+<label opaque="NO" contentMode="left" text="VENTAS" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="p4y-vF-eRu"><rect key="frame" x="0" y="0" width="345" height="43"/><fontDescription key="fontDescription" type="boldSystem" pointSize="36"/><color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/><nil key="highlightedColor"/></label>
+<label opaque="NO" contentMode="left" text="Bienvenida. Inicia sesión para continuar." numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="JWo-lr-NwY"><rect key="frame" x="0" y="51" width="345" height="44"/><fontDescription key="fontDescription" type="system" pointSize="18"/><color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/><nil key="highlightedColor"/></label>
+</subviews></stackView><stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="login-fields-stack"><rect key="frame" x="0" y="123" width="345" height="120"/><subviews><textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-kG-aIv"><rect key="frame" x="0" y="0" width="345" height="54"/><color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/><constraints><constraint firstAttribute="height" constant="54" id="login-IcT-kG-aIv-height"/></constraints><fontDescription key="fontDescription" type="system" pointSize="17"/><textInputTraits key="textInputTraits" autocapitalizationType="none" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="NO" textContentType="username"/></textField><textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-66-A8F"><rect key="frame" x="0" y="66" width="345" height="54"/><color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/><constraints><constraint firstAttribute="height" constant="54" id="login-hjj-66-A8F-height"/></constraints><fontDescription key="fontDescription" type="system" pointSize="17"/><textInputTraits key="textInputTraits" autocapitalizationType="none" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" textContentType="password"/></textField></subviews></stackView><stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="login-buttons-stack"><rect key="frame" x="0" y="271" width="345" height="116"/><subviews><button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="TW0-eb-xKG"><rect key="frame" x="0" y="0" width="345" height="52"/><color key="backgroundColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/><constraints><constraint firstAttribute="height" constant="52" id="login-TW0-eb-xKG-height"/></constraints><fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/><state key="normal" title="Ingresar"><color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></state><userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="12"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes><connections><action selector="ingresar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PI5-FQ-7Nr"/></connections></button><button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO" id="IIV-8c-gI3"><rect key="frame" x="0" y="64" width="345" height="52"/><color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/><constraints><constraint firstAttribute="height" constant="52" id="login-IIV-8c-gI3-height"/></constraints><fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/><state key="normal" title="Crear cuenta"><color key="titleColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></state><userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="12"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes><connections><segue destination="xW7-jX-S2l" kind="show" id="4YV-K2-I9r"/></connections></button></subviews></stackView></subviews></stackView></subviews>
+<constraints>
+<constraint firstItem="login-main-stack" firstAttribute="top" secondItem="login-content-guide" secondAttribute="top" constant="48" id="login-stack-top"/>
+<constraint firstItem="login-content-guide" firstAttribute="bottom" secondItem="login-main-stack" secondAttribute="bottom" constant="32" id="login-stack-bottom"/>
+<constraint firstItem="login-main-stack" firstAttribute="centerX" secondItem="login-content-guide" secondAttribute="centerX" id="login-stack-center"/>
+<constraint firstItem="login-content-guide" firstAttribute="width" secondItem="login-frame-guide" secondAttribute="width" id="login-content-width"/>
+<constraint firstItem="login-main-stack" firstAttribute="width" secondItem="login-frame-guide" secondAttribute="width" constant="-48" priority="750" id="login-stack-fill"/>
+<constraint firstItem="login-main-stack" firstAttribute="width" relation="lessThanOrEqual" secondItem="login-frame-guide" secondAttribute="width" constant="-48" id="login-stack-margins"/>
+<constraint firstItem="login-main-stack" firstAttribute="width" relation="lessThanOrEqual" constant="420" id="login-stack-maxwidth"/>
+</constraints><viewLayoutGuide key="contentLayoutGuide" id="login-content-guide"/><viewLayoutGuide key="frameLayoutGuide" id="login-frame-guide"/>
+</scrollView></subviews><viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/><color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<constraints>
+<constraint firstItem="login-scroll" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="login-scroll-top"/>
+<constraint firstItem="login-scroll" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="login-scroll-left"/>
+<constraint firstItem="login-scroll" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="login-scroll-right"/>
+<constraint firstItem="login-scroll" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="login-scroll-bottom"/>
+</constraints></view>
                     <navigationItem key="navigationItem" id="aMM-2y-Zky"/>
                     <connections>
-                        <outlet property="claveTextField" destination="hjj-66-A8F" id="de7-Es-ATz"/>
+                        <outlet property="loginScrollView" destination="login-scroll" id="login-scroll-outlet"/><outlet property="loginScrollBottomConstraint" destination="login-scroll-bottom" id="login-bottom-outlet"/><outlet property="claveTextField" destination="hjj-66-A8F" id="de7-Es-ATz"/>
                         <outlet property="usuarioTextField" destination="IcT-kG-aIv" id="2JS-Kn-1Ut"/>
                         <segue destination="menu-vc" kind="presentation" identifier="loginAMenuPrincipal" modalPresentationStyle="fullScreen" id="sfu-iK-LzE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814.50381679389307" y="105.63380281690141"/>
+            <point key="canvasLocation" x="561" y="-356"/>
         </scene>
         <!--Registro View Controller-->
         <scene sceneID="S7Y-aB-Glz">
             <objects>
                 <viewController id="xW7-jX-S2l" customClass="RegistroViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SG2-Gt-25Q">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+    <view key="view" id="SG2-Gt-25Q" contentMode="scaleToFill">
+        <rect key="frame" x="0" y="0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <subviews>
+            <scrollView id="registro-scroll" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO">
+                <rect key="frame" x="0" y="103" width="393" height="715" />
+                <subviews>
+                    <stackView id="registro-main-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO">
+                        <rect key="frame" x="24" y="32" width="345" height="462.0" />
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CREAR CUENTA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvT-XI-xCP">
-                                <rect key="frame" x="157" y="117" width="124" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <label id="PvT-XI-xCP" opaque="NO" contentMode="left" text="CREAR CUENTA" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="0" width="345" height="36" />
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30" />
+                                <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre Completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiX-aw-co6">
-                                <rect key="frame" x="132" y="186" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g0y-Nd-RNt">
-                                <rect key="frame" x="132" y="256" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0s-Qc-KxQ">
-                                <rect key="frame" x="132" y="346" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iO4-3H-GnQ">
-                                <rect key="frame" x="132" y="429" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AHA-KC-owB">
-                                <rect key="frame" x="110" y="540" width="172" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Vendedor"/>
-                                    <segment title="Supervisor"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6G-pf-7QI">
-                                <rect key="frame" x="138" y="639" width="117" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Registrarme"/>
+                            <stackView id="registro-fields" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="60.0" width="345" height="236.0" />
+                                <subviews>
+                                    <textField id="CiX-aw-co6" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="0" width="345" height="50" />
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        <constraints>
+                                            <constraint id="CiX-aw-co6-height" firstItem="CiX-aw-co6" firstAttribute="height" constant="50" />
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="name" />
+                                    </textField>
+                                    <textField id="g0y-Nd-RNt" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="62.0" width="345" height="50" />
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        <constraints>
+                                            <constraint id="g0y-Nd-RNt-height" firstItem="g0y-Nd-RNt" firstAttribute="height" constant="50" />
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username" autocapitalizationType="none" />
+                                    </textField>
+                                    <textField id="Q0s-Qc-KxQ" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="124.0" width="345" height="50" />
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        <constraints>
+                                            <constraint id="Q0s-Qc-KxQ-height" firstItem="Q0s-Qc-KxQ" firstAttribute="height" constant="50" />
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="newPassword" secureTextEntry="YES" />
+                                    </textField>
+                                    <textField id="iO4-3H-GnQ" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar contraseña" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="186.0" width="345" height="50" />
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        <constraints>
+                                            <constraint id="iO4-3H-GnQ-height" firstItem="iO4-3H-GnQ" firstAttribute="height" constant="50" />
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="newPassword" secureTextEntry="YES" />
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView id="registro-role" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="320.0" width="345" height="66.0" />
+                                <subviews>
+                                    <label id="registro-role-titulo" opaque="NO" contentMode="left" text="Tipo de cuenta" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="0" width="345" height="18" />
+                                        <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                        <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AHA-KC-owB">
+                                        <rect key="frame" x="0" y="26.0" width="345" height="40" />
+                                        <segments>
+                                            <segment title="Vendedor" />
+                                            <segment title="Supervisor" />
+                                        </segments>
+                                        <constraints>
+                                            <constraint id="AHA-KC-owB-height" firstItem="AHA-KC-owB" firstAttribute="height" constant="40" />
+                                        </constraints>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <button id="r6G-pf-7QI" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="410.0" width="345" height="52" />
+                                <color key="backgroundColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                <constraints>
+                                    <constraint id="r6G-pf-7QI-height" firstItem="r6G-pf-7QI" firstAttribute="height" constant="52" />
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17" />
+                                <state key="normal" title="Registrarme">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="12" />
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="registrarme:" destination="xW7-jX-S2l" eventType="touchUpInside" id="iQb-kw-pFN"/>
+                                    <action selector="registrarme:" destination="xW7-jX-S2l" eventType="touchUpInside" id="iQb-kw-pFN" />
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="NLY-w5-ogG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="GWI-FW-2BF"/>
-                    <connections>
-                        <outlet property="claveTextField" destination="Q0s-Qc-KxQ" id="zBc-IO-ESi"/>
-                        <outlet property="confirmarTextField" destination="iO4-3H-GnQ" id="iBG-mD-VyC"/>
-                        <outlet property="nombreTextField" destination="CiX-aw-co6" id="clc-q9-jOa"/>
-                        <outlet property="rolSegmented" destination="AHA-KC-owB" id="Uml-gv-qoG"/>
-                        <outlet property="usuarioTextField" destination="g0y-Nd-RNt" id="HSX-Tu-WXA"/>
-                    </connections>
-                </viewController>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint id="registro-top" firstItem="registro-main-stack" firstAttribute="top" secondItem="registro-content" secondAttribute="top" constant="32" />
+                    <constraint id="registro-bottom" firstItem="registro-content" firstAttribute="bottom" secondItem="registro-main-stack" secondAttribute="bottom" constant="32" />
+                    <constraint id="registro-center" firstItem="registro-main-stack" firstAttribute="centerX" secondItem="registro-content" secondAttribute="centerX" />
+                    <constraint id="registro-content-width" firstItem="registro-content" firstAttribute="width" secondItem="registro-frame" secondAttribute="width" />
+                    <constraint id="registro-width" firstItem="registro-main-stack" firstAttribute="width" secondItem="registro-frame" secondAttribute="width" constant="-48" priority="750" />
+                    <constraint id="registro-margins" firstItem="registro-main-stack" firstAttribute="width" secondItem="registro-frame" secondAttribute="width" constant="-48" relation="lessThanOrEqual" />
+                    <constraint id="registro-maxwidth" firstItem="registro-main-stack" firstAttribute="width" constant="420" relation="lessThanOrEqual" />
+                </constraints>
+                <viewLayoutGuide key="contentLayoutGuide" id="registro-content" />
+                <viewLayoutGuide key="frameLayoutGuide" id="registro-frame" />
+            </scrollView>
+        </subviews>
+        <viewLayoutGuide key="safeArea" id="NLY-w5-ogG" />
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        <constraints>
+            <constraint id="registro-scroll-top" firstItem="registro-scroll" firstAttribute="top" secondItem="NLY-w5-ogG" secondAttribute="top" />
+            <constraint id="registro-scroll-leading" firstItem="registro-scroll" firstAttribute="leading" secondItem="NLY-w5-ogG" secondAttribute="leading" />
+            <constraint id="registro-scroll-trailing" firstItem="registro-scroll" firstAttribute="trailing" secondItem="NLY-w5-ogG" secondAttribute="trailing" />
+            <constraint id="registro-scroll-bottom" firstItem="registro-scroll" firstAttribute="bottom" secondItem="NLY-w5-ogG" secondAttribute="bottom" />
+        </constraints>
+    </view>
+    <navigationItem key="navigationItem" id="GWI-FW-2BF" />
+    <connections>
+        <outlet property="claveTextField" destination="Q0s-Qc-KxQ" id="zBc-IO-ESi" />
+        <outlet property="confirmarTextField" destination="iO4-3H-GnQ" id="iBG-mD-VyC" />
+        <outlet property="nombreTextField" destination="CiX-aw-co6" id="clc-q9-jOa" />
+        <outlet property="rolSegmented" destination="AHA-KC-owB" id="Uml-gv-qoG" />
+        <outlet property="usuarioTextField" destination="g0y-Nd-RNt" id="HSX-Tu-WXA" />
+        <outlet property="registroScrollView" destination="registro-scroll" id="registroScrollView-wire" />
+        <outlet property="registroScrollBottomConstraint" destination="registro-scroll-bottom" id="registroScrollBottomConstraint-wire" />
+    </connections>
+</viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBB-7L-zAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="106"/>
+            <point key="canvasLocation" x="1440" y="-356"/>
         </scene>
         <!--Productos View Controller-->
         <scene sceneID="BzU-oo-UkJ">
             <objects>
                 <viewController storyboardIdentifier="ProductosViewController" id="IZy-Hj-LyE" customClass="ProductosViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MMc-Wk-sSb">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PRODUCTOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjt-4m-AIm">
-                                <rect key="frame" x="145" y="111" width="102" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-Jx-jNg">
-                                <rect key="frame" x="83" y="201" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cdh-j9-EDm">
-                                <rect key="frame" x="83" y="273" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Precio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bbe-Gk-Ix0">
-                                <rect key="frame" x="83" y="364" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stock" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yJ8-pm-Wsg">
-                                <rect key="frame" x="223" y="364" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh2-hU-fmh">
-                                <rect key="frame" x="117" y="458" width="160" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Guardar Producto"/>
-                                <connections>
-                                    <action selector="guardarProducto:" destination="IZy-Hj-LyE" eventType="touchUpInside" id="PLm-ba-uou"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="Buscar Producto" translatesAutoresizingMaskIntoConstraints="NO" id="aY1-s5-LcX">
-                                <rect key="frame" x="0.0" y="501" width="393" height="64"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="IZy-Hj-LyE" id="gI1-YM-InG"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2a1-uJ-kPa">
-                                <rect key="frame" x="76" y="614" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Suh-3c-1vn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tfS-22-hzb"/>
-                    <connections>
-                        <outlet property="buscarSearchBar" destination="aY1-s5-LcX" id="czN-9K-hDn"/>
-                        <outlet property="categoriaTextField" destination="Cdh-j9-EDm" id="k4z-67-Y6a"/>
-                        <outlet property="guardarButton" destination="gh2-hU-fmh" id="WvJ-e8-Zkk"/>
-                        <outlet property="nombreTextField" destination="qgw-Jx-jNg" id="Bv8-3o-TUL"/>
-                        <outlet property="precioTextField" destination="Bbe-Gk-Ix0" id="Acj-2r-IyR"/>
-                        <outlet property="productosTableView" destination="2a1-uJ-kPa" id="TUo-Er-xan"/>
-                        <outlet property="stockTextField" destination="yJ8-pm-Wsg" id="jkc-b0-JIw"/>
-                    </connections>
-                </viewController>
+    <view key="view" id="MMc-Wk-sSb" contentMode="scaleToFill">
+        <rect key="frame" x="0" y="0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <subviews>
+            <tableView id="2a1-uJ-kPa" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="singleLine" rowHeight="-1" estimatedRowHeight="110" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO">
+                <rect key="frame" x="0" y="103" width="393" height="681" />
+                <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                <view key="tableHeaderView" id="productos-header" contentMode="scaleToFill">
+                    <rect key="frame" x="0" y="0" width="393" height="408.0" />
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" />
+                    <subviews>
+                        <stackView id="productos-header-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO">
+                            <rect key="frame" x="20" y="16" width="353" height="384.0" />
+                            <subviews>
+                                <label id="Qjt-4m-AIm" opaque="NO" contentMode="left" text="PRODUCTOS" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="0" width="353" height="34" />
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                                    <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                </label>
+                                <textField id="qgw-Jx-jNg" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre del producto" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="46.0" width="353" height="50" />
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    <constraints>
+                                        <constraint id="qgw-Jx-jNg-height" firstItem="qgw-Jx-jNg" firstAttribute="height" constant="50" />
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" />
+                                </textField>
+                                <textField id="Cdh-j9-EDm" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoría" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="108.0" width="353" height="50" />
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    <constraints>
+                                        <constraint id="Cdh-j9-EDm-height" firstItem="Cdh-j9-EDm" firstAttribute="height" constant="50" />
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" />
+                                </textField>
+                                <stackView id="productos-price-stock" opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually">
+                                    <rect key="frame" x="0" y="170.0" width="353" height="50" />
+                                    <subviews>
+                                        <textField id="Bbe-Gk-Ix0" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Precio (S/)" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="0" width="170.5" height="50" />
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                            <constraints>
+                                                <constraint id="Bbe-Gk-Ix0-height" firstItem="Bbe-Gk-Ix0" firstAttribute="height" constant="50" />
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" />
+                                        </textField>
+                                        <textField id="yJ8-pm-Wsg" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Stock" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="182.5" y="0" width="170.5" height="50" />
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                            <constraints>
+                                                <constraint id="yJ8-pm-Wsg-height" firstItem="yJ8-pm-Wsg" firstAttribute="height" constant="50" />
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" />
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <button id="gh2-hU-fmh" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="0" y="232.0" width="353" height="52" />
+                                    <color key="backgroundColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    <constraints>
+                                        <constraint id="gh2-hU-fmh-height" firstItem="gh2-hU-fmh" firstAttribute="height" constant="52" />
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17" />
+                                    <state key="normal" title="Guardar producto">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <real key="value" value="12" />
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="guardarProducto:" destination="IZy-Hj-LyE" eventType="touchUpInside" id="PLm-ba-uou" />
+                                    </connections>
+                                </button>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="aY1-s5-LcX" placeholder="Buscar producto" searchBarStyle="minimal" showsScopeBar="YES" selectedScopeButtonIndex="0">
+                                    <rect key="frame" x="0" y="296.0" width="353" height="88" />
+                                    <textInputTraits key="textInputTraits" />
+                                    <connections>
+                                        <outlet property="delegate" destination="IZy-Hj-LyE" id="gI1-YM-InG" />
+                                    </connections>
+                                    <scopeButtonTitles>
+                                        <string>Nombre</string>
+                                        <string>Categoría</string>
+                                    </scopeButtonTitles>
+                                </searchBar>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint id="productos-header-top" firstItem="productos-header-stack" firstAttribute="top" secondItem="productos-header" secondAttribute="top" constant="16" />
+                        <constraint id="productos-header-leading" firstItem="productos-header-stack" firstAttribute="leading" secondItem="productos-header" secondAttribute="leading" constant="20" />
+                        <constraint id="productos-header-trailing" firstItem="productos-header" firstAttribute="trailing" secondItem="productos-header-stack" secondAttribute="trailing" constant="20" />
+                        <constraint id="productos-header-bottom" firstItem="productos-header" firstAttribute="bottom" secondItem="productos-header-stack" secondAttribute="bottom" constant="8" />
+                    </constraints>
+                </view>
+                <prototypes>
+                    <tableViewCell id="producto-cell" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" reuseIdentifier="ProductoCell" rowHeight="95.0" customClass="ProductoTableViewCell" customModule="Ventas" customModuleProvider="target">
+                        <rect key="frame" x="0" y="408.0" width="393" height="95.0" />
+                        <autoresizingMask key="autoresizingMask" />
+                        <tableViewCellContentView key="contentView" id="producto-cell-content" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="producto-cell">
+                            <rect key="frame" x="0" y="0" width="367" height="95.0" />
+                            <autoresizingMask key="autoresizingMask" />
+                            <subviews>
+                                <stackView id="producto-cell-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <rect key="frame" x="16" y="12" width="335" height="71.0" />
+                                    <subviews>
+                                        <label id="producto-cell-nombre" opaque="NO" contentMode="left" text="Nombre del producto" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="0" width="335" height="22" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18" />
+                                            <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <label id="producto-cell-categoria" opaque="NO" contentMode="left" text="Categoría" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="0" y="28.0" width="335" height="17" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                            <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                        </label>
+                                        <stackView id="producto-cell-importes" opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually">
+                                            <rect key="frame" x="0" y="51.0" width="335" height="20" />
+                                            <subviews>
+                                                <label id="producto-cell-precio" opaque="NO" contentMode="left" text="S/ 0.00" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="0" y="0" width="161.5" height="20" />
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16" />
+                                                    <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </label>
+                                                <label id="producto-cell-stock" opaque="NO" contentMode="left" text="Stock: 0" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                    <rect key="frame" x="173.5" y="0" width="161.5" height="20" />
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16" />
+                                                    <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint id="producto-cell-top" firstItem="producto-cell-stack" firstAttribute="top" secondItem="producto-cell-content" secondAttribute="top" constant="12" />
+                                <constraint id="producto-cell-leading" firstItem="producto-cell-stack" firstAttribute="leading" secondItem="producto-cell-content" secondAttribute="leading" constant="16" />
+                                <constraint id="producto-cell-trailing" firstItem="producto-cell-content" firstAttribute="trailing" secondItem="producto-cell-stack" secondAttribute="trailing" constant="16" />
+                                <constraint id="producto-cell-bottom" firstItem="producto-cell-content" firstAttribute="bottom" secondItem="producto-cell-stack" secondAttribute="bottom" constant="12" />
+                            </constraints>
+                        </tableViewCellContentView>
+                        <connections>
+                            <outlet property="nombreLabel" destination="producto-cell-nombre" id="producto-cell-nombre-wire" />
+                            <outlet property="categoriaLabel" destination="producto-cell-categoria" id="producto-cell-categoria-wire" />
+                            <outlet property="precioLabel" destination="producto-cell-precio" id="producto-cell-precio-wire" />
+                            <outlet property="stockLabel" destination="producto-cell-stock" id="producto-cell-stock-wire" />
+                        </connections>
+                    </tableViewCell>
+                </prototypes>
+            </tableView>
+        </subviews>
+        <viewLayoutGuide key="safeArea" id="Suh-3c-1vn" />
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        <constraints>
+            <constraint id="productos-table-top" firstItem="2a1-uJ-kPa" firstAttribute="top" secondItem="Suh-3c-1vn" secondAttribute="top" />
+            <constraint id="productos-table-leading" firstItem="2a1-uJ-kPa" firstAttribute="leading" secondItem="Suh-3c-1vn" secondAttribute="leading" />
+            <constraint id="productos-table-trailing" firstItem="2a1-uJ-kPa" firstAttribute="trailing" secondItem="Suh-3c-1vn" secondAttribute="trailing" />
+            <constraint id="productos-table-bottom" firstItem="2a1-uJ-kPa" firstAttribute="bottom" secondItem="Suh-3c-1vn" secondAttribute="bottom" />
+        </constraints>
+    </view>
+    <navigationItem key="navigationItem" id="tfS-22-hzb" />
+    <connections>
+        <outlet property="buscarSearchBar" destination="aY1-s5-LcX" id="czN-9K-hDn" />
+        <outlet property="categoriaTextField" destination="Cdh-j9-EDm" id="k4z-67-Y6a" />
+        <outlet property="guardarButton" destination="gh2-hU-fmh" id="WvJ-e8-Zkk" />
+        <outlet property="nombreTextField" destination="qgw-Jx-jNg" id="Bv8-3o-TUL" />
+        <outlet property="precioTextField" destination="Bbe-Gk-Ix0" id="Acj-2r-IyR" />
+        <outlet property="productosTableView" destination="2a1-uJ-kPa" id="TUo-Er-xan" />
+        <outlet property="stockTextField" destination="yJ8-pm-Wsg" id="jkc-b0-JIw" />
+        <outlet property="productosHeaderStack" destination="productos-header-stack" id="productosHeaderStack-wire" />
+        <outlet property="productosBottomConstraint" destination="productos-table-bottom" id="productosBottomConstraint-wire" />
+    </connections>
+</viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKO-FA-sD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="-589"/>
+            <point key="canvasLocation" x="-1370" y="1294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eCv-sd-zQd">
@@ -244,7 +387,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLz-MT-IDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-112.21374045801527" y="105.63380281690141"/>
+            <point key="canvasLocation" x="-366" y="-356"/>
         </scene>
         <!--Clientes View Controller-->
         <scene sceneID="a4-scene">
@@ -322,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2666" y="106"/>
+            <point key="canvasLocation" x="-410" y="1294"/>
         </scene>
         <!--Registrar Venta View Controller-->
         <scene sceneID="a5-scene">
@@ -453,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="1001"/>
+            <point key="canvasLocation" x="560" y="1294"/>
         </scene>
         <!--Mis Ventas View Controller-->
         <scene sceneID="a6-scene">
@@ -521,7 +664,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2947" y="1001"/>
+            <point key="canvasLocation" x="1440" y="1294"/>
         </scene>
         <!--Menu Principal View Controller-->
         <scene sceneID="menu-scene">
@@ -535,7 +678,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="menu-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="815" y="1001"/>
+            <point key="canvasLocation" x="561" y="553"/>
         </scene>
         <!--Cuenta-->
         <scene sceneID="cuenta-scene">
@@ -692,7 +835,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuenta-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3839" y="1001"/>
+            <point key="canvasLocation" x="4479" y="1294"/>
         </scene>
         <!--Resumen-->
         <scene sceneID="resumen-scene">
@@ -971,7 +1114,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="resumen-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4756" y="1001"/>
+            <point key="canvasLocation" x="3482" y="1294"/>
         </scene>
         <!--Ventas del equipo-->
         <scene sceneID="equipo-scene">
@@ -1087,7 +1230,7 @@ Cantidad: — · Total: S/ 0.00</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="equipo-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5662" y="1001"/>
+            <point key="canvasLocation" x="2428" y="1294"/>
         </scene>
     </scenes>
     <resources>

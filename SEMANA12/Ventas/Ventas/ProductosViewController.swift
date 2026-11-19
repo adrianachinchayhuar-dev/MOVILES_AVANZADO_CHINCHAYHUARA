@@ -10,6 +10,8 @@ final class ProductosViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var precioTextField: UITextField!
     @IBOutlet weak var stockTextField: UITextField!
     @IBOutlet weak var guardarButton: UIButton!
+    @IBOutlet private weak var productosHeaderStack: UIStackView!
+    @IBOutlet private weak var productosBottomConstraint: NSLayoutConstraint!
 
 
     var usuarioSesion: Usuario? {
@@ -36,12 +38,14 @@ final class ProductosViewController: UIViewController, UITableViewDataSource,
         buscarSearchBar.delegate = self
         buscarSearchBar.text = ""
         buscarSearchBar.placeholder = "Buscar producto"
-        buscarSearchBar.scopeButtonTitles = ["Nombre", "Categoría"]
-        buscarSearchBar.showsScopeBar = true
         buscarSearchBar.selectedScopeButtonIndex = 0
         precioTextField.keyboardType = .decimalPad
         stockTextField.keyboardType = .numberPad
         productosTableView.keyboardDismissMode = .onDrag
+        productosTableView.rowHeight = UITableView.automaticDimension
+        productosTableView.estimatedRowHeight = 110
+        productosBottomConstraint.isActive = false
+        productosTableView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
         guard let app = UIApplication.shared.delegate as? AppDelegate else {
             guardarButton.isEnabled = false
             return
@@ -57,6 +61,20 @@ final class ProductosViewController: UIViewController, UITableViewDataSource,
         actualizarPermisos()
         contexto?.refreshAllObjects()
         cargarProductos()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let cabecera = productosTableView.tableHeaderView else { return }
+        let ancho = productosTableView.bounds.width
+        let ajuste = productosHeaderStack.systemLayoutSizeFitting(
+            CGSize(width: max(0, ancho - 40), height: UIView.layoutFittingCompressedSize.height),
+            withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+        let alto = ceil(ajuste.height + 24)
+        if cabecera.frame.width != ancho || abs(cabecera.frame.height - alto) > 0.5 {
+            cabecera.frame.size = CGSize(width: ancho, height: alto)
+            productosTableView.tableHeaderView = cabecera
+        }
     }
 
     private func actualizarPermisos() {
@@ -139,13 +157,13 @@ final class ProductosViewController: UIViewController, UITableViewDataSource,
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // No requiere prototipo ni clase de celda adicional en Storyboard.
-        let celda = tableView.dequeueReusableCell(withIdentifier: "ProductoCell")
-            ?? UITableViewCell(style: .subtitle, reuseIdentifier: "ProductoCell")
+        let celda = tableView.dequeueReusableCell(withIdentifier: "ProductoCell", for: indexPath) as! ProductoTableViewCell
         let producto = productos[indexPath.row]
-        celda.textLabel?.text = "\(producto.nombre ?? "") · \(producto.categoria ?? "")"
-        celda.detailTextLabel?.text = String(format: "Precio: %.2f · Stock: %lld", producto.precio, producto.stock)
-        celda.detailTextLabel?.textColor = producto.stock > 10 ? .systemGreen
+        celda.nombreLabel.text = producto.nombre
+        celda.categoriaLabel.text = producto.categoria
+        celda.precioLabel.text = String(format: "S/ %.2f", producto.precio)
+        celda.stockLabel.text = "Stock: \(producto.stock)"
+        celda.stockLabel.textColor = producto.stock > 10 ? .systemGreen
             : (producto.stock >= 6 ? UIColor(red: 1, green: 0.65, blue: 0, alpha: 1) : .systemRed)
         celda.selectionStyle = puedeModificar ? .default : .none
         celda.accessoryType = puedeModificar ? .disclosureIndicator : .none

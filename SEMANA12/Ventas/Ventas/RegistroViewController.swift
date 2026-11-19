@@ -16,6 +16,8 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var claveTextField: UITextField!
     @IBOutlet weak var confirmarTextField: UITextField!
     @IBOutlet weak var rolSegmented: UISegmentedControl!
+    @IBOutlet private weak var registroScrollView: UIScrollView!
+    @IBOutlet private weak var registroScrollBottomConstraint: NSLayoutConstraint!
 
     private var registrando = false
 
@@ -24,6 +26,8 @@ class RegistroViewController: UIViewController {
 
         claveTextField.isSecureTextEntry = true
         confirmarTextField.isSecureTextEntry = true
+        registroScrollBottomConstraint.isActive = false
+        registroScrollView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
     }
 
     @IBAction func registrarme(_ sender: UIButton) {
