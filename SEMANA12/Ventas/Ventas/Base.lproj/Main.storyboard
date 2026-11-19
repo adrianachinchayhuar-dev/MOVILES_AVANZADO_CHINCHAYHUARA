@@ -534,129 +534,231 @@
         <scene sceneID="a5-scene">
             <objects>
                 <viewController storyboardIdentifier="RegistrarVentaViewController" id="a5-vc" customClass="RegistrarVentaViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a5-view">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+    <view key="view" id="a5-view" contentMode="scaleToFill">
+        <rect key="frame" x="0" y="0" width="393" height="852" />
+        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+        <subviews>
+            <scrollView id="a5-scroll" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO">
+                <rect key="frame" x="0" y="103" width="393" height="681" />
+                <subviews>
+                    <stackView id="a5-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO">
+                        <rect key="frame" x="24" y="24" width="345" height="710.0" />
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="a5-scroll">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            <label id="a5-title" opaque="NO" contentMode="left" text="REGISTRAR VENTA" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="0" width="345" height="34" />
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                                <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                            </label>
+                            <stackView id="venta-selectores-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="54.0" width="345" height="196.0" />
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a5-stack">
-                                        <rect key="frame" x="20" y="16" width="353" height="402.66666666666669"/>
+                                    <stackView id="venta-cliente-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="0" width="345" height="90.0" />
                                         <subviews>
-                                            <label opaque="NO" contentMode="left" text="REGISTRAR VENTA" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a5-title">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
+                                            <label id="venta-cliente-titulo" opaque="NO" contentMode="left" text="Cliente" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="0" width="345" height="18" />
+                                                <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                                <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5-cliente">
-                                                <rect key="frame" x="0.0" y="28.333333333333329" width="353" height="40"/>
+                                            <button id="a5-cliente" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="26.0" width="345" height="64" />
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="12" />
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="a5-cliente-height"/>
+                                                    <constraint id="a5-cliente-v4-height" firstItem="a5-cliente" firstAttribute="height" constant="64" relation="greaterThanOrEqual" />
                                                 </constraints>
-                                                <state key="normal" title="Seleccionar cliente"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                <inset key="contentEdgeInsets" minX="16" minY="12" maxX="16" maxY="12" />
+                                                <state key="normal" title="Seleccionar cliente">
+                                                    <color key="titleColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5-producto">
-                                                <rect key="frame" x="0.0" y="76.333333333333343" width="353" height="40"/>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView id="venta-producto-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="106.0" width="345" height="90.0" />
+                                        <subviews>
+                                            <label id="venta-producto-titulo" opaque="NO" contentMode="left" text="Producto" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="0" width="345" height="18" />
+                                                <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                                <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                            </label>
+                                            <button id="a5-producto" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="26.0" width="345" height="64" />
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="12" />
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="a5-producto-height"/>
+                                                    <constraint id="a5-producto-v4-height" firstItem="a5-producto" firstAttribute="height" constant="64" relation="greaterThanOrEqual" />
                                                 </constraints>
-                                                <state key="normal" title="Seleccionar producto"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                <inset key="contentEdgeInsets" minX="16" minY="12" maxX="16" maxY="12" />
+                                                <state key="normal" title="Seleccionar producto">
+                                                    <color key="titleColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                </state>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantidad" translatesAutoresizingMaskIntoConstraints="NO" id="a5-cantidad">
-                                                <rect key="frame" x="0.0" y="124.33333333333334" width="353" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="a5-cantidad-height"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView id="venta-cantidad-precio-stack" opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" distribution="fillEqually" alignment="center">
+                                <rect key="frame" x="0" y="270.0" width="345" height="78.0" />
+                                <subviews>
+                                    <stackView id="venta-cantidad-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="0" y="0.0" width="164.5" height="78.0" />
+                                        <subviews>
+                                            <label id="venta-cantidad-titulo" opaque="NO" contentMode="left" text="Cantidad" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="0" width="164.5" height="18" />
+                                                <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                                <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                            </label>
+                                            <textField id="a5-cantidad" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cantidad" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="26.0" width="164.5" height="52" />
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" />
                                                 <connections>
-                                                    <action selector="cantidadCambiada:" destination="a5-vc" eventType="editingChanged" id="menu-action-a5-cantidad"/>
+                                                    <action selector="cantidadCambiada:" destination="a5-vc" eventType="editingChanged" id="menu-action-a5-cantidad" />
                                                 </connections>
+                                                <constraints>
+                                                    <constraint id="venta-cantidad-height" firstItem="a5-cantidad" firstAttribute="height" constant="52" />
+                                                </constraints>
                                             </textField>
-                                            <label opaque="NO" contentMode="left" text="Precio unitario: —" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a5-precio">
-                                                <rect key="frame" x="0.0" y="172.33333333333334" width="353" height="20.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
+                                        </subviews>
+                                    </stackView>
+                                    <label id="a5-precio" opaque="NO" contentMode="left" text="Precio unitario: —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="180.5" y="28.5" width="164.5" height="21" />
+                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                        <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view id="venta-resumen-card" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="368.0" width="345" height="210.0" />
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="12" />
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <subviews>
+                                    <stackView id="venta-resumen-stack" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="16" y="16" width="313" height="178.0" />
+                                        <subviews>
+                                            <label id="venta-resumen-titulo" opaque="NO" contentMode="left" text="Resumen de la venta" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="0" width="313" height="22" />
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18" />
+                                                <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                             </label>
-                                            <label opaque="NO" contentMode="left" text="Subtotal: —" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a5-subtotal">
-                                                <rect key="frame" x="0.0" y="200.66666666666669" width="353" height="20.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
+                                            <label id="a5-subtotal" opaque="NO" contentMode="left" text="Subtotal: —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="34.0" width="313" height="21" />
+                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                             </label>
-                                            <label opaque="NO" contentMode="left" text="Descuento: —" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a5-descuento">
-                                                <rect key="frame" x="0.0" y="229" width="353" height="20.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
+                                            <label id="a5-descuento" opaque="NO" contentMode="left" text="Descuento: —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="67.0" width="313" height="21" />
+                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                             </label>
-                                            <label opaque="NO" contentMode="left" text="IGV: —" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a5-igv">
-                                                <rect key="frame" x="0.0" y="257.33333333333331" width="353" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
+                                            <label id="a5-igv" opaque="NO" contentMode="left" text="IGV (18 %): —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="100.0" width="313" height="21" />
+                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                             </label>
-                                            <label opaque="NO" contentMode="left" text="Total: —" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a5-total">
-                                                <rect key="frame" x="0.0" y="285.66666666666669" width="353" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5-registrar">
-                                                <rect key="frame" x="0.0" y="314" width="353" height="40"/>
+                                            <view id="venta-separador" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="133.0" width="313" height="1" />
+                                                <color key="backgroundColor" red="0.8862745098" green="0.9098039216" blue="0.9411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="a5-registrar-height"/>
+                                                    <constraint id="venta-separador-height" firstItem="venta-separador" firstAttribute="height" constant="1" />
                                                 </constraints>
-                                                <state key="normal" title="Registrar venta"/>
-                                                <connections>
-                                                    <action selector="registrarVenta:" destination="a5-vc" eventType="touchUpInside" id="menu-action-a5-registrar"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" contentMode="left" text="Selecciona cliente y producto e ingresa la cantidad." lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="a5-estado">
-                                                <rect key="frame" x="0.0" y="362" width="353" height="40.666666666666686"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
+                                            </view>
+                                            <label id="a5-total" opaque="NO" contentMode="left" text="Total: S/ —" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                                <rect key="frame" x="0" y="146.0" width="313" height="32" />
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26" />
+                                                <color key="textColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
                                             </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="a5-content" firstAttribute="bottom" secondItem="a5-stack" secondAttribute="bottom" constant="16" id="a5-stbottom"/>
-                                    <constraint firstItem="a5-stack" firstAttribute="leading" secondItem="a5-content" secondAttribute="leading" constant="20" id="a5-stleft"/>
-                                    <constraint firstItem="a5-content" firstAttribute="trailing" secondItem="a5-stack" secondAttribute="trailing" constant="20" id="a5-stright"/>
-                                    <constraint firstItem="a5-stack" firstAttribute="top" secondItem="a5-content" secondAttribute="top" constant="16" id="a5-sttop"/>
-                                    <constraint firstItem="a5-stack" firstAttribute="width" secondItem="a5-frame" secondAttribute="width" constant="-40" id="a5-stwidth"/>
+                                    <constraint id="venta-card-top" firstItem="venta-resumen-stack" firstAttribute="top" secondItem="venta-resumen-card" secondAttribute="top" constant="16" />
+                                    <constraint id="venta-card-leading" firstItem="venta-resumen-stack" firstAttribute="leading" secondItem="venta-resumen-card" secondAttribute="leading" constant="16" />
+                                    <constraint id="venta-card-trailing" firstItem="venta-resumen-card" firstAttribute="trailing" secondItem="venta-resumen-stack" secondAttribute="trailing" constant="16" />
+                                    <constraint id="venta-card-bottom" firstItem="venta-resumen-card" firstAttribute="bottom" secondItem="venta-resumen-stack" secondAttribute="bottom" constant="16" />
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="a5-content"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="a5-frame"/>
-                            </scrollView>
+                            </view>
+                            <label id="a5-estado" opaque="NO" contentMode="left" text="Selecciona cliente y producto e ingresa la cantidad." numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="598.0" width="345" height="36" />
+                                <fontDescription key="fontDescription" type="system" pointSize="15" />
+                                <color key="textColor" red="0.3921568627" green="0.4549019608" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                            </label>
+                            <button id="a5-registrar" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0" y="654.0" width="345" height="56" />
+                                <color key="backgroundColor" red="0.1137254902" green="0.3058823529" blue="0.8470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="12" />
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <constraints>
+                                    <constraint id="a5-registrar-v4-height" firstItem="a5-registrar" firstAttribute="height" constant="56" relation="greaterThanOrEqual" />
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17" />
+                                <inset key="contentEdgeInsets" minX="16" minY="12" maxX="16" maxY="12" />
+                                <state key="normal" title="Registrar venta">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                </state>
+                                <connections>
+                                    <action selector="registrarVenta:" destination="a5-vc" eventType="touchUpInside" id="menu-action-a5-registrar" />
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="a5-safe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="a5-scroll" firstAttribute="bottom" secondItem="a5-safe" secondAttribute="bottom" id="a5-scroll-bottom"/>
-                            <constraint firstItem="a5-scroll" firstAttribute="leading" secondItem="a5-safe" secondAttribute="leading" id="a5-scroll-leading"/>
-                            <constraint firstItem="a5-scroll" firstAttribute="top" secondItem="a5-safe" secondAttribute="top" id="a5-scroll-top"/>
-                            <constraint firstItem="a5-scroll" firstAttribute="trailing" secondItem="a5-safe" secondAttribute="trailing" id="a5-scroll-trailing"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="cantidadTextField" destination="a5-cantidad" id="menu-wire-a5-cantidad"/>
-                        <outlet property="clienteButton" destination="a5-cliente" id="menu-wire-a5-cliente"/>
-                        <outlet property="descuentoLabel" destination="a5-descuento" id="menu-wire-a5-descuento"/>
-                        <outlet property="estadoLabel" destination="a5-estado" id="menu-wire-a5-estado"/>
-                        <outlet property="igvLabel" destination="a5-igv" id="menu-wire-a5-igv"/>
-                        <outlet property="precioUnitarioLabel" destination="a5-precio" id="menu-wire-a5-precio"/>
-                        <outlet property="productoButton" destination="a5-producto" id="menu-wire-a5-producto"/>
-                        <outlet property="registrarButton" destination="a5-registrar" id="menu-wire-a5-registrar"/>
-                        <outlet property="subtotalLabel" destination="a5-subtotal" id="menu-wire-a5-subtotal"/>
-                        <outlet property="totalLabel" destination="a5-total" id="menu-wire-a5-total"/>
-                    </connections>
-                </viewController>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint id="venta-stack-top" firstItem="a5-stack" firstAttribute="top" secondItem="a5-content" secondAttribute="top" constant="24" />
+                    <constraint id="venta-stack-bottom" firstItem="a5-content" firstAttribute="bottom" secondItem="a5-stack" secondAttribute="bottom" constant="32" />
+                    <constraint id="venta-stack-center" firstItem="a5-stack" firstAttribute="centerX" secondItem="a5-content" secondAttribute="centerX" />
+                    <constraint id="venta-content-width" firstItem="a5-content" firstAttribute="width" secondItem="a5-frame" secondAttribute="width" />
+                    <constraint id="venta-stack-width" firstItem="a5-stack" firstAttribute="width" secondItem="a5-frame" secondAttribute="width" constant="-48" priority="750" />
+                    <constraint id="venta-stack-margins" firstItem="a5-stack" firstAttribute="width" secondItem="a5-frame" secondAttribute="width" constant="-48" relation="lessThanOrEqual" />
+                    <constraint id="venta-stack-maxwidth" firstItem="a5-stack" firstAttribute="width" constant="480" relation="lessThanOrEqual" />
+                </constraints>
+                <viewLayoutGuide key="contentLayoutGuide" id="a5-content" />
+                <viewLayoutGuide key="frameLayoutGuide" id="a5-frame" />
+            </scrollView>
+        </subviews>
+        <viewLayoutGuide key="safeArea" id="a5-safe" />
+        <color key="backgroundColor" red="0.9725490196" green="0.9803921569" blue="0.9882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        <constraints>
+            <constraint id="a5-scroll-top" firstItem="a5-scroll" firstAttribute="top" secondItem="a5-safe" secondAttribute="top" />
+            <constraint id="a5-scroll-leading" firstItem="a5-scroll" firstAttribute="leading" secondItem="a5-safe" secondAttribute="leading" />
+            <constraint id="a5-scroll-trailing" firstItem="a5-scroll" firstAttribute="trailing" secondItem="a5-safe" secondAttribute="trailing" />
+            <constraint id="a5-scroll-bottom" firstItem="a5-scroll" firstAttribute="bottom" secondItem="a5-safe" secondAttribute="bottom" />
+        </constraints>
+    </view>
+    <connections>
+        <outlet property="cantidadTextField" destination="a5-cantidad" id="menu-wire-a5-cantidad" />
+        <outlet property="clienteButton" destination="a5-cliente" id="menu-wire-a5-cliente" />
+        <outlet property="descuentoLabel" destination="a5-descuento" id="menu-wire-a5-descuento" />
+        <outlet property="estadoLabel" destination="a5-estado" id="menu-wire-a5-estado" />
+        <outlet property="igvLabel" destination="a5-igv" id="menu-wire-a5-igv" />
+        <outlet property="precioUnitarioLabel" destination="a5-precio" id="menu-wire-a5-precio" />
+        <outlet property="productoButton" destination="a5-producto" id="menu-wire-a5-producto" />
+        <outlet property="registrarButton" destination="a5-registrar" id="menu-wire-a5-registrar" />
+        <outlet property="subtotalLabel" destination="a5-subtotal" id="menu-wire-a5-subtotal" />
+        <outlet property="totalLabel" destination="a5-total" id="menu-wire-a5-total" />
+        <outlet property="ventaScrollView" destination="a5-scroll" id="venta-scroll-outlet" />
+        <outlet property="ventaScrollBottomConstraint" destination="a5-scroll-bottom" id="venta-scroll-bottom-outlet" />
+    </connections>
+</viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="560" y="1294"/>

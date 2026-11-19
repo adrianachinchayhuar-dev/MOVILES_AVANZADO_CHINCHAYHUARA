@@ -12,6 +12,8 @@ final class RegistrarVentaViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var registrarButton: UIButton!
     @IBOutlet weak var estadoLabel: UILabel!
+    @IBOutlet private weak var ventaScrollView: UIScrollView!
+    @IBOutlet private weak var ventaScrollBottomConstraint: NSLayoutConstraint!
 
     var usuarioSesion: Usuario? {
         didSet {
@@ -44,6 +46,10 @@ final class RegistrarVentaViewController: UIViewController {
         contexto.persistentStoreCoordinator = app.persistentContainer.persistentStoreCoordinator
         // La política por defecto de Core Data rechaza conflictos de stock; no los sobrescribe.
         cantidadTextField.keyboardType = .numberPad
+        ventaScrollBottomConstraint.isActive = false
+        ventaScrollView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+        clienteButton.titleLabel?.numberOfLines = 2
+        productoButton.titleLabel?.numberOfLines = 2
         clienteButton.showsMenuAsPrimaryAction = true
         productoButton.showsMenuAsPrimaryAction = true
         limpiarSeleccion()
@@ -89,14 +95,14 @@ final class RegistrarVentaViewController: UIViewController {
         guard let importes = importes else {
             subtotalLabel.text = "Subtotal: —"
             descuentoLabel.text = "Descuento: —"
-            igvLabel.text = "IGV: —"
+            igvLabel.text = "IGV (18 %): —"
             totalLabel.text = "Total: —"
             return
         }
         estadoLabel.text = "Cliente \(importes.categoria) · Revisa los importes y registra la venta."
         subtotalLabel.text = "Subtotal: \(moneda(importes.subtotal))"
         descuentoLabel.text = "Descuento: \(moneda(importes.descuento))"
-        igvLabel.text = "IGV: \(moneda(importes.igv))"
+        igvLabel.text = "IGV (18 %): \(moneda(importes.igv))"
         totalLabel.text = "Total: \(moneda(importes.total))"
     }
 
