@@ -8,8 +8,8 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
             guard isViewLoaded else { return }
             if oldValue?.objectID != usuarioSesion?.objectID {
                 vendedorID = nil
-                buscarSearchBar.text = ""
-                estadoSegmented.selectedSegmentIndex = 0
+                buscarSearchBar?.text = ""
+                estadoSegmented?.selectedSegmentIndex = 0
             }
             cargar()
         }
@@ -27,10 +27,10 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
     private var resumen: [(String, String)] = []
     private var anulando = false
     private var vendedorID: NSManagedObjectID?
-    private let buscarSearchBar = UISearchBar()
-    private let estadoSegmented = UISegmentedControl(items: ["Todas", "Activas", "Anuladas"])
-    private let vendedorButton = UIButton(type: .system)
-    private var filtrosStack: UIStackView?
+    @IBOutlet private weak var buscarSearchBar: UISearchBar?
+    @IBOutlet private weak var estadoSegmented: UISegmentedControl?
+    @IBOutlet private weak var vendedorButton: UIButton?
+    @IBOutlet private weak var filtrosStack: UIStackView?
     private let fecha: DateFormatter = {
         let formato = DateFormatter()
         formato.dateStyle = .short
@@ -45,7 +45,7 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = mostrarResumen ? "Resumen" : "Ventas"
+        title = mostrarResumen ? "Resumen" : "Ventas del equipo"
         let app = UIApplication.shared.delegate as! AppDelegate
         contexto = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         contexto.persistentStoreCoordinator = app.persistentContainer.persistentStoreCoordinator
@@ -63,28 +63,11 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
     }
 
     private func configurarFiltros() {
-        buscarSearchBar.placeholder = "Cliente, producto o vendedor"
-        buscarSearchBar.delegate = self
-        estadoSegmented.selectedSegmentIndex = 0
-        estadoSegmented.addTarget(self, action: #selector(cambiarEstado), for: .valueChanged)
-        vendedorButton.setTitle("Vendedor: Todos", for: .normal)
-        vendedorButton.showsMenuAsPrimaryAction = true
-        vendedorButton.titleLabel?.numberOfLines = 0
-        let stack = UIStackView(arrangedSubviews: [buscarSearchBar, estadoSegmented, vendedorButton])
-        stack.axis = .vertical
-        stack.spacing = 8
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        let cabecera = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 160))
-        cabecera.addSubview(stack)
-        NSLayoutConstraint.activate([
-            stack.topAnchor.constraint(equalTo: cabecera.topAnchor, constant: 8),
-            stack.leadingAnchor.constraint(equalTo: cabecera.leadingAnchor, constant: 16),
-            stack.trailingAnchor.constraint(equalTo: cabecera.trailingAnchor, constant: -16),
-            stack.bottomAnchor.constraint(equalTo: cabecera.bottomAnchor, constant: -8),
-            vendedorButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 44)
-        ])
-        filtrosStack = stack
-        tableView.tableHeaderView = cabecera
+        // Controles y restricciones creados en Main.storyboard, sin duplicarlos.
+        buscarSearchBar?.delegate = self
+        estadoSegmented?.selectedSegmentIndex = 0
+        vendedorButton?.showsMenuAsPrimaryAction = true
+        vendedorButton?.titleLabel?.numberOfLines = 0
     }
 
     private func configurarActualizacion() {
@@ -107,7 +90,7 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         }
     }
 
-    @objc private func cambiarEstado() { cargar() }
+    @IBAction private func cambiarEstado(_ sender: UISegmentedControl) { cargar() }
     @objc private func actualizarListado() {
         contexto.refreshAllObjects()
         cargar()
@@ -125,7 +108,7 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
         let usuarios = try contexto.fetch(solicitud)
         if let id = vendedorID, !usuarios.contains(where: { $0.objectID == id }) { vendedorID = nil }
         let seleccionado = usuarios.first { $0.objectID == vendedorID }
-        vendedorButton.setTitle("Vendedor: \(seleccionado.map { nombreVendedor($0) } ?? "Todos")", for: .normal)
+        vendedorButton?.setTitle("Vendedor: \(seleccionado.map { nombreVendedor($0) } ?? "Todos")", for: .normal)
         var opciones = [UIAction(title: "Todos", state: vendedorID == nil ? .on : .off) { [weak self] _ in
             self?.seleccionarVendedor(nil)
         }]
@@ -135,7 +118,7 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
                 self?.seleccionarVendedor(id)
             }
         }
-        vendedorButton.menu = UIMenu(title: "Filtrar por vendedor", children: opciones)
+        vendedorButton?.menu = UIMenu(title: "Filtrar por vendedor", children: opciones)
     }
 
     private func seleccionarVendedor(_ id: NSManagedObjectID?) {
@@ -147,11 +130,11 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
     private func cargar() {
         guard contexto != nil else { return }
         ventas = []; resumen = []
-        buscarSearchBar.isUserInteractionEnabled = autorizado
-        estadoSegmented.isEnabled = autorizado
-        vendedorButton.isEnabled = autorizado
+        buscarSearchBar?.isUserInteractionEnabled = autorizado
+        estadoSegmented?.isEnabled = autorizado
+        vendedorButton?.isEnabled = autorizado
         guard autorizado else {
-            vendedorButton.menu = nil
+            vendedorButton?.menu = nil
             mostrarEstado("Se requiere una sesión Supervisor para consultar las ventas del equipo.")
             return
         }
@@ -170,18 +153,18 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
                 try actualizarVendedores()
                 let solicitud: NSFetchRequest<Venta> = Venta.fetchRequest()
                 var filtros: [NSPredicate] = []
-                let texto = (buscarSearchBar.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                let texto = (buscarSearchBar?.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                 if !texto.isEmpty {
                     filtros.append(NSPredicate(format: "cliente.nombre CONTAINS[cd] %@ OR producto.nombre CONTAINS[cd] %@ OR vendedor.nombre CONTAINS[cd] %@ OR vendedor.usuario CONTAINS[cd] %@", texto, texto, texto, texto))
                 }
                 if let id = vendedorID { filtros.append(NSPredicate(format: "vendedor == %@", id)) }
-                if estadoSegmented.selectedSegmentIndex == 1 { filtros.append(NSPredicate(format: "anulada == NO")) }
-                if estadoSegmented.selectedSegmentIndex == 2 { filtros.append(NSPredicate(format: "anulada == YES")) }
+                if estadoSegmented?.selectedSegmentIndex == 1 { filtros.append(NSPredicate(format: "anulada == NO")) }
+                if estadoSegmented?.selectedSegmentIndex == 2 { filtros.append(NSPredicate(format: "anulada == YES")) }
                 solicitud.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: filtros)
                 solicitud.sortDescriptors = [NSSortDescriptor(key: "fecha", ascending: false)]
                 solicitud.relationshipKeyPathsForPrefetching = ["cliente", "producto", "vendedor"]
                 ventas = try contexto.fetch(solicitud)
-                let filtrando = !texto.isEmpty || vendedorID != nil || estadoSegmented.selectedSegmentIndex != 0
+                let filtrando = !texto.isEmpty || vendedorID != nil || (estadoSegmented?.selectedSegmentIndex ?? 0) != 0
                 mostrarEstado(ventas.isEmpty ? (filtrando ? "No hay ventas que coincidan. Prueba otra búsqueda o cambia los filtros." : "Todavía no hay ventas registradas por el equipo.") : nil)
                 return
             }
@@ -228,15 +211,10 @@ final class SupervisorViewController: UITableViewController, UISearchBarDelegate
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { false }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if mostrarResumen { return super.tableView(tableView, cellForRowAt: indexPath) }
-        let celda = tableView.dequeueReusableCell(withIdentifier: "VentaEquipoCell")
-            ?? UITableViewCell(style: .subtitle, reuseIdentifier: "VentaEquipoCell")
-        celda.selectionStyle = mostrarResumen ? .none : .default
-        celda.accessoryType = mostrarResumen ? .none : .disclosureIndicator
-        celda.textLabel?.numberOfLines = 0
-        celda.detailTextLabel?.numberOfLines = 0
+        let celda = tableView.dequeueReusableCell(withIdentifier: "VentaEquipoCell", for: indexPath) as! VentaEquipoTableViewCell
         let venta = ventas[indexPath.row]
-        celda.textLabel?.text = "\(fechaVenta(venta)) · \(venta.anulada ? "Anulada" : "Activa")"
-        celda.detailTextLabel?.text = "Cliente: \(venta.cliente?.nombre ?? "Sin cliente")\nProducto: \(venta.producto?.nombre ?? "Sin producto")\nVendedor: \(nombreVendedor(venta.vendedor))\nCantidad: \(venta.cantidad) · Total: \(importe(venta.total))"
+        celda.encabezadoLabel.text = "\(fechaVenta(venta)) · \(venta.anulada ? "Anulada" : "Activa")"
+        celda.informacionLabel.text = "Cliente: \(venta.cliente?.nombre ?? "Sin cliente")\nProducto: \(venta.producto?.nombre ?? "Sin producto")\nVendedor: \(nombreVendedor(venta.vendedor))\nCantidad: \(venta.cantidad) · Total: \(importe(venta.total))"
         return celda
     }
 

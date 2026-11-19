@@ -46,7 +46,7 @@ final class MenuPrincipalViewController: UITabBarController {
                 if resumen {
                     destino = storyboard.instantiateViewController(withIdentifier: "ResumenSupervisorViewController") as! SupervisorViewController
                 } else {
-                    destino = SupervisorViewController(style: .insetGrouped)
+                    destino = storyboard.instantiateViewController(withIdentifier: "VentasEquipoViewController") as! SupervisorViewController
                 }
                 destino.usuarioSesion = usuario
                 destino.mostrarResumen = resumen

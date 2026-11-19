@@ -973,6 +973,122 @@
             </objects>
             <point key="canvasLocation" x="4756" y="1001"/>
         </scene>
+        <!--Ventas del equipo-->
+        <scene sceneID="equipo-scene">
+            <objects>
+                <tableViewController storyboardIdentifier="VentasEquipoViewController" id="equipo-vc" customClass="SupervisorViewController" customModule="Ventas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="150" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="equipo-table">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="equipo-header">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="198"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-filtros">
+                                    <rect key="frame" x="16" y="8" width="361" height="182"/>
+                                    <subviews>
+                                        <label opaque="NO" contentMode="left" ambiguous="YES" text="Ventas del equipo" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-titulo">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="26.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <searchBar contentMode="redraw" ambiguous="YES" placeholder="Cliente, producto o vendedor" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-buscar">
+                                            <rect key="frame" x="0.0" y="34.333333333333343" width="361" height="64"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-estado">
+                                            <rect key="frame" x="0.0" y="106.33333333333333" width="361" height="24.666666666666671"/>
+                                            <segments>
+                                                <segment title="Todas"/>
+                                                <segment title="Activas"/>
+                                                <segment title="Anuladas"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="cambiarEstado:" destination="equipo-vc" eventType="valueChanged" id="equipo-estado-action"/>
+                                            </connections>
+                                        </segmentedControl>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-vendedor">
+                                            <rect key="frame" x="0.0" y="138" width="361" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="equipo-vendedor-height"/>
+                                            </constraints>
+                                            <state key="normal" title="Vendedor: Todos"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="equipo-filtros" secondAttribute="bottom" constant="8" id="equipo-header-bottom"/>
+                                <constraint firstItem="equipo-filtros" firstAttribute="leading" secondItem="equipo-header" secondAttribute="leading" constant="16" id="equipo-header-left"/>
+                                <constraint firstAttribute="trailing" secondItem="equipo-filtros" secondAttribute="trailing" constant="16" id="equipo-header-right"/>
+                                <constraint firstItem="equipo-filtros" firstAttribute="top" secondItem="equipo-header" secondAttribute="top" constant="8" id="equipo-header-top"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VentaEquipoCell" rowHeight="160" id="equipo-cell" customClass="VentaEquipoTableViewCell" customModule="Ventas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="248" width="393" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="equipo-cell" id="equipo-cell-content">
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-stack">
+                                            <rect key="frame" x="16" y="12" width="330.66666666666669" height="136"/>
+                                            <subviews>
+                                                <label opaque="NO" contentMode="left" ambiguous="YES" text="Fecha · Estado" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-encabezado">
+                                                    <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="56.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" contentMode="left" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="equipo-cell-informacion">
+                                                    <rect key="frame" x="0.0" y="64.333333333333314" width="330.66666666666669" height="71.666666666666686"/>
+                                                    <string key="text">Cliente: —
+Producto: —
+Vendedor: —
+Cantidad: — · Total: S/ 0.00</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="equipo-cell-stack" secondAttribute="bottom" constant="12" id="equipo-cell-bottom"/>
+                                        <constraint firstItem="equipo-cell-stack" firstAttribute="leading" secondItem="equipo-cell-content" secondAttribute="leading" constant="16" id="equipo-cell-left"/>
+                                        <constraint firstAttribute="trailing" secondItem="equipo-cell-stack" secondAttribute="trailing" constant="16" id="equipo-cell-right"/>
+                                        <constraint firstItem="equipo-cell-stack" firstAttribute="top" secondItem="equipo-cell-content" secondAttribute="top" constant="12" id="equipo-cell-top"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="encabezadoLabel" destination="equipo-cell-encabezado" id="equipo-cell-encabezado-outlet"/>
+                                    <outlet property="informacionLabel" destination="equipo-cell-informacion" id="equipo-cell-informacion-outlet"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="equipo-vc" id="equipo-datasource"/>
+                            <outlet property="delegate" destination="equipo-vc" id="equipo-delegate"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ventas del equipo" id="equipo-navigation"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="mostrarResumen" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="buscarSearchBar" destination="equipo-buscar" id="equipo-buscar-outlet"/>
+                        <outlet property="estadoSegmented" destination="equipo-estado" id="equipo-estado-outlet"/>
+                        <outlet property="filtrosStack" destination="equipo-filtros" id="equipo-filtros-outlet"/>
+                        <outlet property="vendedorButton" destination="equipo-vendedor" id="equipo-vendedor-outlet"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="equipo-responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5662" y="1001"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
